@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo's Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="index.html">Leo<span>'s Blog</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="articles/list.html">博客文章</a></li>
+                <li><a href="#projects">个人项目</a></li>
+                <li><a href="#portfolio">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="avatar-wrapper">
+                        <img src="images/avatar.jpg" alt="Leo" class="avatar-img">
+                    </div>
+                    <h1 class="hero-name">Leo</h1>
+                    <p class="hero-signature">never too late to learn</p>
+                    <div class="hero-badges">
+                        <span class="badge">AI+BI开发</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Leo-fql" target="_blank" class="social-link" title="GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank" class="social-link" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="mailto:15111231533@163.com" class="social-link" title="Email">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="intro-text">
+                        <p>数据平台开发专家，6年+ Data+BI开发经验，精通SAP BW、Databricks数仓与主流BI工具（Tableau、Power BI、QuickBI等），擅长利用AI工具赋能BI开发与数据分析流程。</p>
+                        <p>目前服务于某知名企业，直接对接数据部门，负责运维与开发Tableau/PowerBI系统（8+主题域、40+报表、1000+用户），持续学习AI+BI前沿技术，不断提升专业能力。</p>
+                        <p><strong>擅长需求分析、指标体系搭建、AI+BI全流程开发(ETL/报表/流程与应用)与跨部门协作，能够将复杂业务需求转化为高效的数据解决方案。</strong></p>
+                    </div>
+                    <div class="intro-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">Tableau</span>
+                            <span class="stat-label">可视化报表</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Power BI</span>
+                            <span class="stat-label">商业智能</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Power Platform</span>
+                            <span class="stat-label">流程应用</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">SQL/Python</span>
+                            <span class="stat-label">开发语言</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Databricks</span>
+                            <span class="stat-label">数据平台</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">SAP BW</span>
+                            <span class="stat-label">数仓建设</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="section articles-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="section-icon">📝</span>
+                    博客文章
+                </h2>
+                <div class="articles-grid">
+                    <a href="articles/ai-bi.html" class="article-card article-featured" data-category="ai">
+                        <div class="article-card-header">
+                            <span class="article-star">⭐ 推荐</span>
+                            <span class="article-cat">AI</span>
+                        </div>
+                        <div class="article-date">2026.01.20</div>
+                        <h3 class="article-title">AI 赋能 BI：提效与优化完全指南</h3>
+                        <p class="article-excerpt">深入探讨Power BI原生AI功能、MCP Server详解、PBIP文件格式演进等前沿技术...</p>
+                        <span class="read-more">阅读全文 →</span>
+                    </a>
+                    <a href="articles/bi-platform-review.html" class="article-card" data-category="ai">
+                        <div class="article-card-header">
+                            <span class="article-cat">AI</span>
+                        </div>
+                        <div class="article-date">2026.01.15</div>
+                        <h3 class="article-title">2026年主流BI平台横评：谁的AI智能问数更强？</h3>
+                        <p class="article-excerpt">横向评测FineBI、Tableau、Power BI等主流BI平台的AI智能问数能力...</p>
+                        <span class="read-more">阅读全文 →</span>
+                    </a>
+                    <a href="articles/tableau-performance.html" class="article-card" data-category="tableau">
+                        <div class="article-card-header">
+                            <span class="article-cat">Tableau</span>
+                        </div>
+                        <div class="article-date">2025.12.20</div>
+                        <h3 class="article-title">Tableau 性能分析与提升</h3>
+                        <p class="article-excerpt">从数据库优化、数据源设计、仪表板设计等多个维度系统讲解性能调优...</p>
+                        <span class="read-more">阅读全文 →</span>
+                    </a>
+                    <a href="articles/powerbi-large-dataset.html" class="article-card" data-category="powerbi">
+                        <div class="article-card-header">
+                            <span class="article-cat">PowerBI</span>
+                        </div>
+                        <div class="article-date">2025.12.15</div>
+                        <h3 class="article-title">Power BI 大数据集最佳实践</h3>
+                        <p class="article-excerpt">星型模式建模、存储模式选择、聚合表设计等核心技巧...</p>
+                        <span class="read-more">阅读全文 →</span>
+                    </a>
+                </div>
+                <div class="section-more">
+                    <a href="articles/list.html" class="btn btn-outline">查看更多</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="section-icon">🗃️</span>
+                    个人项目
+                </h2>
+                <div class="projects-grid">
+                    <a href="projects/migration.html" class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">📊</span>
+                            <div class="project-info">
+                                <h3 class="project-title">QlikSense&Tableau报表迁移项目</h3>
+                                <p class="project-desc">将QlikSense&Tableau报表迁移至PowerBI，梳理全链路，节省千万级license成本</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">QlikSense</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Databricks</span>
+                        </div>
+                        <div class="project-stats">
+                            <span>💰 千万级成本节省</span>
+                            <span>🔄 全链路迁移</span>
+                        </div>
+                    </a>
+                    <a href="projects/dynamic.html" class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">📈</span>
+                            <div class="project-info">
+                                <h3 class="project-title">EM&D Dynamic报表项目</h3>
+                                <p class="project-desc">设计开发Dynamic系列报表，将复杂计算迁移至BI工具，减少资源消耗70%</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">LOD/DAX</span>
+                        </div>
+                        <div class="project-stats">
+                            <span>📉 资源消耗-70%</span>
+                            <span>🎯 多维度分析</span>
+                        </div>
+                    </a>
+                    <a href="projects/power-platform.html" class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">⚙️</span>
+                            <div class="project-info">
+                                <h3 class="project-title">Power Platform流程与应用开发</h3>
+                                <p class="project-desc">实现1000+用户权限管理自动化，权限流程耗时从3天缩短至30分钟</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Power Automate</span>
+                            <span class="tag">PowerAPP</span>
+                            <span class="tag">SharePoint</span>
+                        </div>
+                        <div class="project-stats">
+                            <span>⏱️ 3天→30分钟</span>
+                            <span>👥 1000+用户</span>
+                        </div>
+                    </a>
+                    <a href="projects/ai-bi.html" class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">🔮</span>
+                            <div class="project-info">
+                                <h3 class="project-title">AI赋能BI探索与应用</h3>
+                                <p class="project-desc">使用Databricks Genie实现自然语言到图表生成，调教后准确率98%</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Databricks Genie</span>
+                            <span class="tag">Data Agent</span>
+                            <span class="tag">AI Query</span>
+                        </div>
+                        <div class="project-stats">
+                            <span>🎯 98%准确率</span>
+                            <span>⚡ 效率提升50%</span>
+                        </div>
+                    </a>
+                    <a href="projects/kpi.html" class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">⏱️</span>
+                            <div class="project-info">
+                                <h3 class="project-title">技术中心KPI考核项目</h3>
+                                <p class="project-desc">多平台采集考核数据并搭建处理链，考核周期从半年度缩短至实时</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">SAP BW</span>
+                            <span class="tag">HANA</span>
+                        </div>
+                        <div class="project-stats">
+                            <span>📅 半年→实时</span>
+                            <span>✅ 线上核算</span>
+                        </div>
+                    </a>
+                    <a href="projects/data-governance.html" class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">🔄</span>
+                            <div class="project-info">
+                                <h3 class="project-title">数据治理与指标体系搭建</h3>
+                                <p class="project-desc">从0建立营销领域指标体系，管理8个主题域，数据质量提升至95%以上</p>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">SAP BW</span>
+                            <span class="tag">数据治理</span>
+                            <span class="tag">指标体系</span>
+                        </div>
+                        <div class="project-stats">
+                            <span>📋 100+指标</span>
+                            <span>✅ 95%数据质量</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="section-more">
+                    <a href="https://github.com/Leo-fql" target="_blank" class="btn btn-outline">在 GitHub 查看更多</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section portfolio-section">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="section-icon">🎨</span>
+                    作品集
+                </h2>
+                <div class="portfolio-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+                    <a href="portfolio/dynamic-consumer.html" class="portfolio-card">
+                        <div class="portfolio-card-header" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#f8fafc;border-radius:8px 8px 0 0;border:1px solid #e2e8f0;border-bottom:none;">
+                            <h3 class="portfolio-card-title" style="font-size:0.95rem;font-weight:600;color:#1e293b;margin:0;">Dynamic Consumer</h3>
+                            <span class="portfolio-card-cat" style="font-size:0.75rem;color:#64748b;font-style:italic;">Tableau</span>
+                        </div>
+                        <div class="portfolio-thumb" style="width:100%;height:180px;min-height:180px;overflow:hidden;border-radius:0 0 8px 8px;border:1px solid #e2e8f0;border-top:none;box-sizing:border-box;display:block;">
+                            <img src="assets/portfolio/Dynamic Consumer.png" alt="Dynamic Consumer" style="width:100%;height:180px;object-fit:cover;display:block;">
+                        </div>
+                    </a>
+                    <a href="portfolio/gifting-page.html" class="portfolio-card">
+                        <div class="portfolio-card-header" style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#f8fafc;border-radius:8px 8px 0 0;border:1px solid #e2e8f0;border-bottom:none;">
+                            <h3 class="portfolio-card-title" style="font-size:0.95rem;font-weight:600;color:#1e293b;margin:0;">Gifting Page</h3>
+                            <span class="portfolio-card-cat" style="font-size:0.75rem;color:#64748b;font-style:italic;">Power BI</span>
+                        </div>
+                        <div class="portfolio-thumb" style="width:100%;height:180px;min-height:180px;overflow:hidden;border-radius:0 0 8px 8px;border:1px solid #e2e8f0;border-top:none;box-sizing:border-box;display:block;">
+                            <img src="assets/portfolio/Gifting page-1.png" alt="Gifting Page" style="width:100%;height:180px;object-fit:cover;display:block;">
+                        </div>
+                    </a>
+                </div>
+                <div class="section-more">
+                    <a href="portfolio/list.html" class="btn btn-outline">查看更多</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

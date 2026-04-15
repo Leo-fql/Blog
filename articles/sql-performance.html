@@ -1,0 +1,179 @@
+﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影响SQL性能的写法 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="detail-page">
+            <div class="container">
+                <a href="list.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回文章列表
+                </a>
+
+                <header class="detail-header">
+                    <span class="detail-tag">DataWarehouse</span>
+                    <h1>影响SQL性能的写法</h1>
+                    <div class="detail-meta">
+                        <span>📅 2025年10月10日</span>
+                        <span style="margin-left: 16px;">⏱️ 阅读时间：10分钟</span>
+                    </div>
+                </header>
+
+                <div class="detail-content">
+                    <h2>一、避免在WHERE子句中使用IS NULL或IS NOT NULL</h2>
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT id FROM table WHERE name IS NULL</pre>
+                    </div>
+                    <p>这会导致全表扫描，无法使用索引。</p>
+
+                    <h2>二、避免在WHERE子句中使用!=或<>操作符</h2>
+                    <p>数据库在查询时，对 != 或 <> 操作符不会使用索引，而对于 <、<=、=、>、>=、BETWEEN AND，数据库才会使用索引。</p>
+
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT name FROM table WHERE id <> 0</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐：</strong>
+                        <pre>SELECT name FROM table WHERE id < 0
+UNION ALL
+SELECT name FROM table WHERE id > 0</pre>
+                    </div>
+
+                    <h2>三、避免在Where子句中使用OR链接条件</h2>
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT id FROM table WHERE name = 'Value1' OR name = 'Value2'</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐：</strong>
+                        <pre>SELECT id FROM table WHERE name = 'Value1'
+UNION ALL
+SELECT id FROM table WHERE name = 'Value2'</pre>
+                    </div>
+
+                    <h2>四、少用IN或NOT IN</h2>
+                    <p>虽然对于IN的条件会使用索引，不会全表扫描，但在某些特定情况，使用其他方法也许效果更好。</p>
+
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT name FROM table WHERE id IN(1,2,3,4,5)</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐（连续数值）：</strong>
+                        <pre>SELECT name FROM table WHERE id BETWEEN 1 AND 5</pre>
+                    </div>
+
+                    <h2>五、注意LIKE中通配符的使用</h2>
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐（全表扫描）：</strong>
+                        <pre>SELECT id FROM table WHERE name LIKE '%Value%'
+SELECT id FROM table WHERE name LIKE '%Value'</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐（使用索引）：</strong>
+                        <pre>SELECT id FROM table WHERE name LIKE 'Value%'</pre>
+                    </div>
+
+                    <h2>六、避免在Where子句中对字段进行表达式操作</h2>
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT name FROM table WHERE id/2 = 100</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐：</strong>
+                        <pre>SELECT name FROM table WHERE id = 100*2</pre>
+                    </div>
+
+                    <h2>七、避免在Where子句中对字段进行函数操作</h2>
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT id FROM table WHERE SUBSTRING(name,1,8) = 'Value'
+SELECT id FROM table WHERE DATEDIFF(day,datefield,'2024-07-17') >= 0</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐：</strong>
+                        <pre>SELECT id FROM table WHERE name LIKE 'Value%'
+SELECT id FROM table WHERE datefield <= '2024-07-17'</pre>
+                    </div>
+
+                    <h2>八、在子查询中用EXISTS代替IN</h2>
+                    <div class="highlight-box blue">
+                        <strong>❌ 不推荐：</strong>
+                        <pre>SELECT name FROM a WHERE id IN(SELECT id FROM b)</pre>
+                    </div>
+
+                    <div class="tip-box">
+                        <strong>✅ 推荐：</strong>
+                        <pre>SELECT name FROM a WHERE EXISTS(SELECT 1 FROM b WHERE id = a.id)</pre>
+                    </div>
+
+                    <h2>九、SQL什么时候不走索引</h2>
+                    <ol>
+                        <li>条件字段选择性弱，查出的结果集较大，不走索引</li>
+                        <li>Where条件等号两边字段类型不同，不走索引</li>
+                        <li>优化器分析的统计信息陈旧也可能导致不走索引</li>
+                        <li>索引字段 IS NULL 不走索引</li>
+                        <li>对于COUNT(*)当索引字段有NOT NULL约束时走索引，否则不走索引</li>
+                        <li>LIKE后面的字符当首位为通配符时不走索引</li>
+                        <li>使用不等于操作符如：<>、!= 等不走索引</li>
+                        <li>索引字段前加了函数或参加了运算不走索引</li>
+                    </ol>
+
+                    <h2>十、总结</h2>
+                    <p><strong>核心原则：不要在Where子句中的"="左边进行函数、算术运算或其他表达式运算。</strong></p>
+                    <p>遵循这些最佳实践，可以显著提升SQL查询性能，减少数据库负载。</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

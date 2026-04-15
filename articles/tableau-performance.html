@@ -1,0 +1,171 @@
+﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau 性能分析与提升 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="detail-page">
+            <div class="container">
+                <a href="list.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回文章列表
+                </a>
+
+                <header class="detail-header">
+                    <span class="detail-tag">Tableau</span>
+                    <h1>Tableau 性能分析与提升</h1>
+                    <div class="detail-meta">
+                        <span>📅 2025年12月20日</span>
+                        <span style="margin-left: 16px;">⏱️ 阅读时间：20分钟</span>
+                    </div>
+                </header>
+
+                <div class="detail-content">
+                    <h2>一、性能优化概述</h2>
+                    <p>Tableau性能优化是一个系统工程，需要从数据库、数据源、仪表板设计、计算优化等多个维度综合考虑。本文将系统讲解Tableau性能调优的方法论。</p>
+
+                    <h2>二、数据库优化</h2>
+                    <h3>1. 硬件配置</h3>
+                    <ul>
+                        <li>提升服务器硬件配置</li>
+                        <li>增加内存和CPU资源</li>
+                        <li>使用SSD存储提升I/O性能</li>
+                    </ul>
+
+                    <h3>2. 数据结构优化</h3>
+                    <ul>
+                        <li>使用宽表，减少表关联</li>
+                        <li>使用表而非视图</li>
+                        <li>增加索引</li>
+                        <li>使用分区表提升查询效率</li>
+                    </ul>
+
+                    <h2>三、数据源设计优化</h2>
+                    <h3>1. 数据提取 vs 直连</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>模式</th>
+                                <th>优势</th>
+                                <th>适用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>数据提取</td>
+                                <td>查询速度快、离线可用</td>
+                                <td>数据量适中、更新频率低</td>
+                            </tr>
+                            <tr>
+                                <td>直连</td>
+                                <td>数据实时、节省存储</td>
+                                <td>数据量大、实时性要求高</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>2. 数据源筛选器</h3>
+                    <p>善用数据源筛选器，将Tableau使用的数据限制在最低数量级。如数据库中有1亿行，但实际只需要10万行，就没有必要连接1亿行数据。</p>
+
+                    <div class="highlight-box blue">
+                        <strong>💡 核心原则：</strong>如无必要，勿增数据。只使用最少必要数据进行分析或制作报表。
+                    </div>
+
+                    <h2>四、仪表板设计优化</h2>
+                    <h3>1. 减少复杂度</h3>
+                    <ul>
+                        <li>减少自定义SQL的使用</li>
+                        <li>减少表关联和数据融合</li>
+                        <li>使用高粒度汇总表，而非低粒度明细表</li>
+                    </ul>
+
+                    <h3>2. 初始加载优化</h3>
+                    <p>在用户初始打开的界面，只显示最少必要数据。使用参数和筛选器控制数据展示范围。</p>
+
+                    <h3>3. 计算优化</h3>
+                    <ul>
+                        <li>将在Tableau计算的复杂指标，前移至数据库中计算</li>
+                        <li>减少嵌套计算的数量</li>
+                        <li>使用布尔或数字计算，而非字符串计算</li>
+                        <li>在可能的情况下，使用MIN或MAX，而非AVG</li>
+                    </ul>
+
+                    <h2>五、查询优化技巧</h2>
+                    <h3>1. 筛选器优化</h3>
+                    <ul>
+                        <li>使用包含筛选器而非排除筛选器</li>
+                        <li>使用连续日期筛选器（相对和日期范围）</li>
+                        <li>使用布尔或数字过滤器</li>
+                        <li>使用参数和动作过滤器</li>
+                    </ul>
+
+                    <h3>2. 数据混合优化</h3>
+                    <ul>
+                        <li>在低粒度尺寸上混合</li>
+                        <li>最小化已连接的表</li>
+                        <li>假设参考完整性（如数据库支持）</li>
+                        <li>删除自定义SQL</li>
+                    </ul>
+
+                    <h2>六、工作簿清理</h2>
+                    <ul>
+                        <li>缩小仪表板范围</li>
+                        <li>删除或合并未使用的工作表和数据源</li>
+                        <li>清理不需要的计算字段</li>
+                    </ul>
+
+                    <h2>七、终极优化原则</h2>
+                    <p>无论使用何种优化方法，"性能优化"面临着不变的物理定律：</p>
+                    <div class="highlight-box blue">
+                        <strong>在硬件和软件相同的条件下，数据量越大，图形越复杂，速度越慢。</strong>
+                        <p style="margin-top: 8px;">终极的性能调优方法是只使用最少必要数据进行分析或制作报表。在连接数千万行后台表进行分析或做报表前，一定要三思。</p>
+                    </div>
+
+                    <h2>八、总结</h2>
+                    <p>总结起来，后台数据库表结构越简洁高效，数据量越小，前台Tableau图表越简单，实现方法越优雅，用户的总体性能就越快。</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

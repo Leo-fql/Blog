@@ -1,0 +1,138 @@
+﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau权限控制操作步骤 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="detail-page">
+            <div class="container">
+                <a href="list.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回文章列表
+                </a>
+
+                <header class="detail-header">
+                    <span class="detail-tag">Tableau</span>
+                    <h1>Tableau权限控制操作步骤</h1>
+                    <div class="detail-meta">
+                        <span>📅 2025年10月25日</span>
+                        <span style="margin-left: 16px;">⏱️ 阅读时间：15分钟</span>
+                    </div>
+                </header>
+
+                <div class="detail-content">
+                    <h2>一、权限控制概述</h2>
+                    <p>Tableau权限控制针对不同的角色，可以限制他的角色以及操作。例如管理员可以查看、修改和发布所有工作簿，部门领导或业务员只能看到对应级别的页面，不能进行页面操作。</p>
+                    <p>权限的控制分为两层：第一层是页面权限，第二层是数据权限。</p>
+
+                    <h2>二、页面权限最佳做法</h2>
+                    <h3>1. 锁定权限至项目级别</h3>
+                    <p>在项目设置中锁定权限，确保权限继承的一致性。</p>
+
+                    <h3>2. 移除"所有用户"组的权限</h3>
+                    <p>避免默认权限带来的安全风险，移除"所有用户"组的默认权限。</p>
+
+                    <h3>3. 根据组织情况新建用户组</h3>
+                    <p>根据组织架构和业务需求，创建相应的用户组。</p>
+
+                    <h3>4. 为新建的组分配权限</h3>
+                    <p>在新项目文件夹上为新建的组分配权限，分别对项目、工作簿、数据源设置权限。</p>
+
+                    <h3>5. 新建用户</h3>
+                    <p>在Tableau Server中创建新用户账号。</p>
+
+                    <h3>6. 将用户添加至相应的组</h3>
+                    <p>设置好用户之后，将用户添加至相应的组，则该用户自动获得该组所拥有的权限。</p>
+
+                    <div class="highlight-box blue">
+                        <strong>💡 注意：</strong>
+                        <p style="margin-top: 8px;">如果用户跳转至没有权限的目标表时，会显示报错页面，属于正常情况。</p>
+                    </div>
+
+                    <h2>三、行级别数据源权限（RLS）</h2>
+                    <h3>权限控制工作流</h3>
+                    <p>行级别权限控制包含：</p>
+                    <ul>
+                        <li><strong>权限表</strong>：所有用户与权限对应关系的一张表（或视图）</li>
+                        <li><strong>事实表</strong>：视图或通过JOIN的大宽表，需要包含与权限表一样的权限列</li>
+                    </ul>
+
+                    <h3>实现步骤</h3>
+                    <h4>步骤一：连接权限表和事实表</h4>
+                    <p>在数据连接画布上连接"权限表"和"Fact_Table"，两个表之间通过<code>1 = 1</code>进行交叉连接。</p>
+
+                    <h4>步骤二：创建"用户权限"计算字段</h4>
+                    <pre><code>Username = USERNAME()</code></pre>
+                    <p>USERNAME()是Tableau内置函数，能获取当前访问Tableau Server的用户名。</p>
+
+                    <h4>步骤三：创建"筛选控制"计算字段</h4>
+                    <pre><code>([部门] = [部门 (权限表)] OR ISNULL([部门 (权限表)]))
+AND
+([区域] = [区域 (权限表)] OR ISNULL([区域 (权限表)]))
+AND
+([业务员] = [业务员 (权限表)] OR ISNULL([业务员 (权限表)]))</code></pre>
+
+                    <h4>步骤四：将计算字段用于数据源筛选器</h4>
+                    <p>将以上创建的两个计算字段用于数据源筛选器，并且勾选"真"。</p>
+
+                    <h4>步骤五：验证数据权限</h4>
+                    <p>制作简单的页面并选择相关用户，验证数据权限是否正确。</p>
+
+                    <h4>步骤六：发布数据源</h4>
+                    <p>权限验证OK后，发布数据源。至此完成数据的行级别权限控制。</p>
+
+                    <h2>四、参考文档</h2>
+                    <ul>
+                        <li>内容权限：Tableau官方帮助文档</li>
+                        <li>行级安全性最佳做法：Tableau Server文档</li>
+                        <li>在数据行级别限制访问权限：Tableau Desktop文档</li>
+                    </ul>
+
+                    <h2>五、总结</h2>
+                    <p>Tableau权限控制需要从页面权限和数据权限两个层面进行配置。页面权限通过用户组和项目权限设置实现，数据权限通过RLS行级别安全实现。两者结合，可以实现精细化的权限控制。</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

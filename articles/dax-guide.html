@@ -1,0 +1,164 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAX别裁新解：诠释新视角 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="detail-page">
+            <div class="container">
+                <a href="list.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回文章列表
+                </a>
+
+                <header class="detail-header">
+                    <span class="detail-tag">PowerBI</span>
+                    <h1>DAX别裁新解：诠释新视角</h1>
+                    <div class="detail-meta">
+                        <span>📅 2025年11月15日</span>
+                        <span style="margin-left: 16px;">⏱️ 阅读时间：20分钟</span>
+                    </div>
+                </header>
+
+                <div class="detail-content">
+                    <h2>一、入门：分析概念</h2>
+                    <h3>1. 分析本质和度量值</h3>
+                    <ul>
+                        <li>分析的本质是抽象</li>
+                        <li>抽象的实现形式为聚合（由明细到问题）</li>
+                        <li>聚合的结果为度量（业务称为指标）</li>
+                    </ul>
+                    <p>比如SQL的GROUP BY、Excel的透视、DAX的Context</p>
+
+                    <h3>2. 数据准备与辅助列（计算列）</h3>
+                    <p>分析之前的准备（问题缺少的要素），计算列一般非聚合（可以是行级别的预先聚合），通常是行级别，是预先的计算。</p>
+
+                    <h3>3. 百变筛选及筛选器</h3>
+                    <p>筛选是判断T/F，返回一个中间表，和计算的阶段无关。</p>
+
+                    <h3>4. 问题构成和计算上下文（Context）</h3>
+                    <p>影响聚合的要素称为上下文/环境/Context，用表的逻辑理解，嵌套性原则。</p>
+
+                    <h3>5. 典型数据查询</h3>
+                    <ul>
+                        <li><strong>Project</strong> - 列查询</li>
+                        <li><strong>Filter</strong> - row by row筛选</li>
+                        <li><strong>Summarize</strong> - 分组聚合</li>
+                    </ul>
+
+                    <h2>二、进阶篇：Expression</h2>
+                    <h3>1. Excel和DAX的日期函数</h3>
+                    <p>行级别函数/表达式，数据准备性质，如YEAR/DATEDIFF</p>
+
+                    <h3>2. 明细级别SUM+IF/SUMIF到SUMX</h3>
+                    <p>新建列：SUM+IF是行级别计算，SUMIF = SUMX + FILTER</p>
+
+                    <h3>3. 问题阶段SUM+IF/SUMIF到SUMX</h3>
+                    <p>透视表：IF+SUM，IF优先筛选器，SUM+IF不可行，用SUMX效率更高。</p>
+
+                    <h3>4. 为度量增加前置筛选：从SUMX到CALCULATE</h3>
+                    <div class="highlight-box blue">
+                        <strong>CALCULATE vs SUMX</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>CALCULATE改变筛选上下文，可嵌套</li>
+                            <li>SUMX向下兼容，适用于行级别/问题级别</li>
+                            <li>CALCULATE向上兼容，仅适用于问题级别</li>
+                        </ul>
+                    </div>
+
+                    <h3>5. SUMMARIZE表达式</h3>
+                    <ul>
+                        <li><code>SUMMARIZE</code>：table, groupbycolumn, name, expression</li>
+                        <li><code>SUMMARIZECOLUMNS</code>：groupbycolumn, filtertable, name, expression</li>
+                    </ul>
+
+                    <h2>三、高级篇：表操作</h2>
+                    <h3>1. 一切皆是表操作</h3>
+                    <p>表可以视为关系的实例，SQL/DAX都是表操作语言。</p>
+
+                    <h3>2. 表操作的三种类型</h3>
+                    <ul>
+                        <li><strong>筛选（WHERE）</strong> - 表的行子集</li>
+                        <li><strong>投影（SELECT column）</strong> - 表的列子集</li>
+                        <li><strong>扩展（JOIN/UNION）</strong> - 创建新行/列</li>
+                    </ul>
+
+                    <h3>3. 上下文转换</h3>
+                    <ul>
+                        <li>使用CALCULATE将行上下文转换为筛选上下文</li>
+                        <li>使用SUMMARIZECOLUMN增加measure</li>
+                    </ul>
+
+                    <h3>4. 重新理解上下文转换</h3>
+                    <ul>
+                        <li>SUMMARIZE是增加度量值，自带筛选上下文——从明细表到问题的汇总</li>
+                        <li>ADDCOLUMNS是增加计算列，需要使用CALCULATE转换筛选上下文——从明细表到明细表的扩展</li>
+                    </ul>
+
+                    <h2>四、高级案例分析</h2>
+                    <h3>1. Customer Order Frequency 客户频次分析</h3>
+                    <p>二次聚合问题：</p>
+                    <ul>
+                        <li>Tableau使用FIXED预先聚合</li>
+                        <li>SQL使用子查询/中间表</li>
+                        <li>DAX方法一：使用SUMMARIZECOLUMNS创建中间表</li>
+                        <li>DAX方法二：使用计算列预先聚合</li>
+                    </ul>
+
+                    <h3>2. Cohort Analysis 阵列分析</h3>
+                    <p>用户分群与留存分析的经典场景</p>
+
+                    <h3>3. Daily Profit KPI 每日利润判断</h3>
+                    <p>结合时间维度的动态指标计算</p>
+
+                    <h3>4. Percent of Total 合计与优先级</h3>
+                    <p>理解ALL、ALLEXCEPT、ALLSELECTED的区别与应用场景</p>
+
+                    <h2>五、总结</h2>
+                    <p>DAX的核心在于理解上下文的概念，掌握表操作的思维方式。从SUMX到CALCULATE，从行上下文到筛选上下文，每一步都需要深入理解其背后的逻辑。</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客文章 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .articles-page {
+            padding: 80px 0 60px;
+        }
+        .page-header {
+            margin-bottom: 40px;
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        .page-header p {
+            color: var(--text-light);
+        }
+        .filter-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            padding: 8px 20px;
+            background: var(--bg-tertiary);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: var(--accent-color);
+            color: white;
+        }
+        .articles-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .article-item {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .article-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .article-item.featured {
+            border-color: var(--accent-color);
+            grid-column: span 2;
+        }
+        .article-item.featured .article-content {
+            padding: 32px;
+        }
+        .article-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%);
+            color: #856404;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .article-category {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+        }
+        .article-item h2 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .article-item.featured h2 {
+            font-size: 1.5rem;
+        }
+        .article-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+        .article-content {
+            padding: 24px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .articles-list {
+                grid-template-columns: 1fr;
+            }
+            .article-item.featured {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">Leo<span>'s Blog</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html" class="active">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="articles-page">
+            <div class="container">
+                <a href="../index.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回首页
+                </a>
+
+                <div class="page-header">
+                    <h1>博客文章</h1>
+                    <p>记录技术成长与思考</p>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">全部</button>
+                    <button class="filter-tab" data-filter="ai">AI</button>
+                    <button class="filter-tab" data-filter="tableau">Tableau</button>
+                    <button class="filter-tab" data-filter="powerbi">PowerBI</button>
+                    <button class="filter-tab" data-filter="datawarehouse">DataWarehouse</button>
+                    <button class="filter-tab" data-filter="thoughts">Thoughts</button>
+                </div>
+
+                <div class="articles-list">
+                    <a href="ai-bi.html" class="article-item featured" data-category="ai">
+                        <div class="article-content">
+                            <span class="article-badge">⭐ 推荐</span>
+                            <span class="article-category">AI</span>
+                            <h2>AI 赋能 BI：提效与优化完全指南</h2>
+                            <p>深入探讨Power BI原生AI功能、MCP Server详解、PBIP文件格式演进等前沿技术，帮助BI开发者掌握AI时代的开发新范式。</p>
+                            <div class="article-meta">
+                                <span>2026.01.20</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bi-platform-review.html" class="article-item" data-category="ai">
+                        <div class="article-content">
+                            <span class="article-category">AI</span>
+                            <h2>告别复杂操作！2026年主流BI平台横评：谁的AI智能问数更强？</h2>
+                            <p>横向评测FineBI、Tableau、Power BI、Sisense等主流BI平台的AI智能问数能力，帮助你选择最适合的工具。</p>
+                            <div class="article-meta">
+                                <span>2026.01.15</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="databricks-genie.html" class="article-item" data-category="ai">
+                        <div class="article-content">
+                            <span class="article-category">AI</span>
+                            <h2>Databricks Genie 使用指南</h2>
+                            <p>详细介绍Databricks Genie的配置流程、最佳实践和响应质量优化技巧，实现自然语言到SQL查询的智能转换。</p>
+                            <div class="article-meta">
+                                <span>2026.01.10</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tableau-performance.html" class="article-item" data-category="tableau">
+                        <div class="article-content">
+                            <span class="article-category">Tableau</span>
+                            <h2>Tableau 性能分析与提升</h2>
+                            <p>从数据库优化、数据源设计、仪表板设计、计算优化等多个维度，系统讲解Tableau性能调优的方法论。</p>
+                            <div class="article-meta">
+                                <span>2025.12.20</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="powerbi-large-dataset.html" class="article-item" data-category="powerbi">
+                        <div class="article-content">
+                            <span class="article-category">PowerBI</span>
+                            <h2>Power BI 大数据集最佳实践</h2>
+                            <p>星型模式建模、存储模式选择、聚合表设计、增量刷新等Power BI处理大数据集的核心技巧。</p>
+                            <div class="article-meta">
+                                <span>2025.12.15</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="data-governance.html" class="article-item" data-category="datawarehouse">
+                        <div class="article-content">
+                            <span class="article-category">DataWarehouse</span>
+                            <h2>数据治理8种套路方法</h2>
+                            <p>总结数据治理的8种方法论：顶层设计法、监管驱动法、质量控制法、利益驱动法、项目建设法等实用策略。</p>
+                            <div class="article-meta">
+                                <span>2025.12.10</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="trae-solo.html" class="article-item" data-category="thoughts">
+                        <div class="article-content">
+                            <span class="article-category">Thoughts</span>
+                            <h2>我用Trae新版SOLO写了一篇公众号</h2>
+                            <p>分享使用Trae新版SOLO撰写公众号文章的完整体验，从资料搜集、文章撰写到格式转换的全流程记录。</p>
+                            <div class="article-meta">
+                                <span>2025.12.05</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="bi-permission.html" class="article-item" data-category="powerbi">
+                        <div class="article-content">
+                            <span class="article-category">PowerBI</span>
+                            <h2>BI权限控制操作手册</h2>
+                            <p>详细介绍BI系统四层权限控制结构：系统入口权限、用户登录权限、报表权限、数据权限的配置方法。</p>
+                            <div class="article-meta">
+                                <span>2025.11.20</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="dax-guide.html" class="article-item" data-category="powerbi">
+                        <div class="article-content">
+                            <span class="article-category">PowerBI</span>
+                            <h2>DAX别裁新解：诠释新视角</h2>
+                            <p>从分析概念、表达式进阶到高级表操作，系统讲解DAX的核心原理和实战技巧。</p>
+                            <div class="article-meta">
+                                <span>2025.11.15</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="python-refresh.html" class="article-item" data-category="powerbi">
+                        <div class="article-content">
+                            <span class="article-category">PowerBI</span>
+                            <h2>Python刷新Tableau和PowerBI数据源</h2>
+                            <p>使用Python脚本自动刷新Power BI和Tableau的数据源，实现数据更新的自动化。</p>
+                            <div class="article-meta">
+                                <span>2025.11.10</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tableau-permission.html" class="article-item" data-category="tableau">
+                        <div class="article-content">
+                            <span class="article-category">Tableau</span>
+                            <h2>Tableau权限控制操作步骤</h2>
+                            <p>详细讲解Tableau页面权限和行级别数据权限（RLS）的配置方法，实现精细化的权限控制。</p>
+                            <div class="article-meta">
+                                <span>2025.10.25</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tableau-install.html" class="article-item" data-category="tableau">
+                        <div class="article-content">
+                            <span class="article-category">Tableau</span>
+                            <h2>Tableau测试系统安装部署</h2>
+                            <p>从TSM初始化、激活注册、创建管理员到配置HTTPS，完整记录Tableau Server安装部署流程。</p>
+                            <div class="article-meta">
+                                <span>2025.10.15</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="sql-performance.html" class="article-item" data-category="datawarehouse">
+                        <div class="article-content">
+                            <span class="article-category">DataWarehouse</span>
+                            <h2>影响SQL性能的写法</h2>
+                            <p>总结常见的SQL性能问题：避免使用IS NULL、!=、OR等影响索引的写法，提升查询效率。</p>
+                            <div class="article-meta">
+                                <span>2025.10.10</span>
+                                <span>阅读全文 →</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.article-item').forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

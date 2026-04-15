@@ -1,0 +1,173 @@
+﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Platform流程与应用开发 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">Leo<span>'s Blog</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="../articles/list.html">博客文章</a></li>
+                <li><a href="../index.html#projects" class="active">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="detail-page">
+            <div class="container">
+                <a href="../index.html#projects" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回项目列表
+                </a>
+
+                <header class="detail-header">
+                    <h1>⚙️ Power Platform 流程与应用开发</h1>
+                    <div class="detail-meta">
+                        <span>📅 2022年9月 – 至今</span>
+                        <span>👤 角色：UI与应用开发</span>
+                        <span>🏢 零售行业</span>
+                    </div>
+                    <div class="detail-tags">
+                        <span class="tag highlight">Power Platform</span>
+                        <span class="tag">Power Automate</span>
+                        <span class="tag">Power Apps</span>
+                        <span class="tag">Databricks</span>
+                        <span class="tag">SharePoint</span>
+                    </div>
+                </header>
+
+                                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="value">3天→30分钟</span>
+                        <span class="label">权限流程耗时</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="value">1000+</span>
+                        <span class="label">服务用户数</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="value">全自动化</span>
+                        <span class="label">流程处理</span>
+                    </div>
+                </div>
+
+                <div class="detail-content">
+                    <h2>项目背景</h2>
+                    <p>企业BI系统用户规模超过1000人，权限管理面临巨大挑战。原有的权限申请流程依赖人工处理，从申请到生效平均需要3天，严重影响业务效率。同时，跨平台数据整合困难，手工数据难以与业务数据关联展示。</p>
+
+                    <h2>核心痛点</h2>
+                    <ul>
+                        <li><strong>权限流程繁琐：</strong>用户提交申请后，需要IT人工审核、配置，周期长、易出错</li>
+                        <li><strong>缺乏可视化界面：</strong>用户无法直观查看自己已有的权限和可申请的报表</li>
+                        <li><strong>手工数据维护难：</strong>业务补充数据分散在Excel中，无法与报表数据联动</li>
+                        <li><strong>跨平台数据孤岛：</strong>Databricks、SharePoint、Power BI之间数据无法互通</li>
+                    </ul>
+
+                    <h2>解决方案一：Power BI 权限管控自动化</h2>
+                    
+                    <div class="flow-diagram">
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <h4>用户申请</h4>
+                                <p>Power Apps界面</p>
+                            </div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step">
+                                <h4>审批流程</h4>
+                                <p>Power Automate</p>
+                            </div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step">
+                                <h4>权限配置</h4>
+                                <p>Databricks + API</p>
+                            </div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step">
+                                <h4>通知反馈</h4>
+                                <p>邮件/Teams</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>技术实现</h3>
+                    <ul>
+                        <li><strong>Power Apps前端：</strong>设计友好的Web应用界面，用户可浏览报表目录、查看权限说明、提交申请</li>
+                        <li><strong>Power Automate流程：</strong>实现多级审批流转，自动触发权限配置API调用</li>
+                        <li><strong>Databricks集成：</strong>通过API调用Databricks权限管理接口，实现自动化权限配置</li>
+                        <li><strong>通知机制：</strong>审批结果通过邮件和Teams消息实时通知用户</li>
+                    </ul>
+
+                    <h2>解决方案二：手工数据输入与输出</h2>
+                    <p>针对业务补充数据（如预算调整、目标设定等）难以维护的问题，开发了手工数据管理模块：</p>
+                    <ul>
+                        <li><strong>数据写入：</strong>用户通过Power Apps界面录入手工数据，自动写入Databricks和SharePoint</li>
+                        <li><strong>数据读取：</strong>支持将Databricks中的数据导出为Excel，方便离线编辑</li>
+                        <li><strong>数据关联：</strong>手工数据与业务数据通过统一维度关联，在Power BI报表中联合展示</li>
+                        <li><strong>版本管理：</strong>记录数据变更历史，支持数据回溯</li>
+                    </ul>
+
+                    <h2>技术架构</h2>
+                    <ul>
+                        <li><strong>前端层：</strong>Power Apps Canvas应用，响应式设计支持PC和移动端</li>
+                        <li><strong>流程层：</strong>Power Automate云端流程，支持条件分支、循环、并行处理</li>
+                        <li><strong>数据层：</strong>Databricks Delta Lake + SharePoint Lists双存储架构</li>
+                        <li><strong>集成层：</strong>REST API + Custom Connector实现系统互联</li>
+                    </ul>
+
+                    <div class="highlight-box blue">
+                        <h4>🎯 项目成果</h4>
+                        <p>权限流程耗时从3天缩短至30分钟，实现1000+用户自助权限管理，手工数据与业务数据无缝整合</p>
+                    </div>
+
+                    <h2>技术栈</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item"><span>📱</span> Power Apps</div>
+                        <div class="tech-item"><span>🔄</span> Power Automate</div>
+                        <div class="tech-item"><span>🗄️</span> Databricks</div>
+                        <div class="tech-item"><span>📁</span> SharePoint</div>
+                        <div class="tech-item"><span>🔌</span> REST API</div>
+                        <div class="tech-item"><span>📊</span> Power BI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

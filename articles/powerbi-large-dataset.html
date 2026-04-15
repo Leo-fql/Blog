@@ -1,0 +1,156 @@
+﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI 大数据集最佳实践 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="detail-page">
+            <div class="container">
+                <a href="list.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回文章列表
+                </a>
+
+                <header class="detail-header">
+                    <span class="detail-tag">PowerBI</span>
+                    <h1>Power BI 大数据集最佳实践</h1>
+                    <div class="detail-meta">
+                        <span>📅 2025年12月15日</span>
+                        <span style="margin-left: 16px;">⏱️ 阅读时间：15分钟</span>
+                    </div>
+                </header>
+
+                <div class="detail-content">
+                    <h2>一、概述</h2>
+                    <p>处理大数据集是Power BI开发中的常见挑战。本文将介绍一系列经过验证的最佳实践，帮助你优化大数据集的性能和内存使用。</p>
+
+                    <h2>二、数据建模最佳实践</h2>
+                    <h3>1. 使用星型模式建模</h3>
+                    <p>星型模式是Power BI推荐的建模方式，包含一个事实表和多个维度表。这种结构简单清晰，查询性能优异。</p>
+
+                    <h3>2. 减少模型大小</h3>
+                    <ul>
+                        <li>移除不需要的行或列</li>
+                        <li>删除未使用的字段</li>
+                        <li>合并相似的表</li>
+                    </ul>
+
+                    <h3>3. 选择合适的存储模式</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>存储模式</th>
+                                <th>特点</th>
+                                <th>适用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>导入模式</td>
+                                <td>数据加载到内存，查询速度快</td>
+                                <td>数据量适中，更新频率低</td>
+                            </tr>
+                            <tr>
+                                <td>直连模式</td>
+                                <td>数据保留在源，实时查询</td>
+                                <td>数据量大，实时性要求高</td>
+                            </tr>
+                            <tr>
+                                <td>复合模式</td>
+                                <td>混合使用，灵活配置</td>
+                                <td>部分数据需要实时，部分可缓存</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>三、聚合表设计</h2>
+                    <p>使用聚合表分离用户查询，将高频查询导向预聚合的数据，大幅提升性能。</p>
+
+                    <div class="highlight-box blue">
+                        <strong>💡 聚合表优势：</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>减少内存占用</li>
+                            <li>提升查询速度</li>
+                            <li>降低DAX计算复杂度</li>
+                        </ul>
+                    </div>
+
+                    <h2>四、增量刷新与查询折叠</h2>
+                    <h3>1. 增量刷新</h3>
+                    <p>配置增量刷新策略，只刷新新增或变更的数据，避免全量刷新。</p>
+
+                    <h3>2. 查询折叠</h3>
+                    <p>确保Power Query转换能够折叠到数据源执行，减少数据传输量。</p>
+
+                    <h2>五、数据类型优化</h2>
+                    <h3>1. 更改列的类型</h3>
+                    <p>整数的压缩性能优于文本。在数据加载前，将文本类型的ID字段转换为整数类型。</p>
+
+                    <h3>2. 禁用自动的时间字段</h3>
+                    <p>Power BI会自动为日期字段创建隐藏的时间表，这会增加模型大小。对于大数据集，建议禁用此功能。</p>
+
+                    <h2>六、性能分析工具</h2>
+                    <h3>1. DAX Studio</h3>
+                    <p>使用DAX Studio分析模型内存使用情况，找出占用内存最大的表和列。</p>
+
+                    <h3>2. 性能分析器</h3>
+                    <p>Power BI内置的性能分析器可以帮助识别报表中的性能瓶颈。</p>
+
+                    <h3>3. 查询折叠诊断</h3>
+                    <p>在Power Query编辑器中使用"本机查询"查看转换是否被折叠到数据源。</p>
+
+                    <h2>七、DAX优化技巧</h2>
+                    <h3>1. 使用变量</h3>
+                    <p>在公式中使用变量可以避免重复计算，提升性能。</p>
+
+                    <h3>2. 避免过度使用CALCULATE</h3>
+                    <p>CALCULATE是强大的函数，但过度使用会影响性能。优先考虑使用更简单的聚合函数。</p>
+
+                    <h2>八、总结</h2>
+                    <p>处理大数据集需要从建模、存储、查询等多个维度进行优化。遵循这些最佳实践，可以显著提升Power BI报表的性能和用户体验。</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

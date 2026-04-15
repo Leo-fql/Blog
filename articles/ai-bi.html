@@ -1,0 +1,1349 @@
+﻿﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 赋能 BI：提效与优化完全指南 - Leo's Blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">Leo<span>'s Blog</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">首页</a></li>
+                <li><a href="list.html" class="active">博客文章</a></li>
+                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <article class="detail-page">
+            <div class="container">
+                <a href="list.html" class="back-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    返回文章列表
+                </a>
+
+                <header class="detail-header">
+                    <div class="detail-meta">
+                        <span class="detail-tag">🤖 AI</span>
+                        <span class="detail-tag" style="background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);">⭐ 推荐</span>
+                        <span class="detail-date">📅 2026.01.20</span>
+                        <span class="detail-reading-time">📖 约 25 分钟</span>
+                    </div>
+                    <h1 class="detail-title">AI 赋能 BI：提效与优化完全指南</h1>
+                    <p class="detail-summary">深入探讨 Power BI 原生 AI 功能、MCP Server 详解、PBIP 文件格式演进等前沿技术，帮助 BI 开发者掌握 AI 时代的开发新范式。</p>
+                </header>
+
+                <nav class="toc">
+                    <h4>📑 目录导航</h4>
+                    <ul>
+                        <li><a href="#section1">一、背景与介绍</a></li>
+                        <li><a href="#section2">二、从零开始搭建 Power BI 智能体</a></li>
+                        <li><a href="#section3">三、实际用例详解</a></li>
+                        <li><a href="#section4">四、进一步展望</a></li>
+                        <li><a href="#appendix">附录：推荐学习资源</a></li>
+                    </ul>
+                </nav>
+
+                <div class="detail-content">
+                    <h2 id="section1">一、背景与介绍</h2>
+
+                    <h3>1. Power BI 原生 AI 功能</h3>
+                    <p>Power BI 持续深化与 AI 技术的融合，提供了多项内置智能功能：</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>功能</th>
+                                <th>描述</th>
+                                <th>应用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Copilot for Power BI</strong></td>
+                                <td>微软原生 AI 助手，支持自然语言生成报告、编写 DAX 表达式、创建可视化</td>
+                                <td>快速原型开发、自然语言查询</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Smart Narratives</strong></td>
+                                <td>AI 自动生成可视化摘要文本，解读数据趋势与异常</td>
+                                <td>自动化报告说明、提升可读性</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Q&A Visual</strong></td>
+                                <td>自然语言查询引擎，用户用问句即可获取数据答案</td>
+                                <td>自助式数据分析</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Key Influencers</strong></td>
+                                <td>自动识别影响指标的关键因素</td>
+                                <td>根因分析、业务洞察挖掘</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Anomaly Detection</strong></td>
+                                <td>时序数据异常检测，自动标记偏离正常范围的点</td>
+                                <td>监控与预警</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Explain Data</strong></td>
+                                <td>深入分析数据点背后的原因</td>
+                                <td>数据下钻与归因分析</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Python 集成</strong></td>
+                                <td>支持 Python 机器学习模型嵌入报表</td>
+                                <td>高级预测分析</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <blockquote>
+                        <p><strong>参考来源</strong>：Microsoft Power BI Blog - May 2025 Feature Summary、AI in Power BI (2025) - Medium</p>
+                    </blockquote>
+
+                    <hr>
+
+                    <h3>2. Power BI MCP Server 详解</h3>
+                    <p>MCP（Model Context Protocol，模型上下文协议）是 AI 时代的重要标准，让 AI 助手能够安全、标准化地访问外部工具和数据源。其角色类似于：</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>协议/标准</th>
+                                <th>适用场景</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>REST API</td>
+                                <td>应用程序间通信</td>
+                            </tr>
+                            <tr>
+                                <td>SQL</td>
+                                <td>数据库查询</td>
+                            </tr>
+                            <tr>
+                                <td>XMLA</td>
+                                <td>语义模型访问</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MCP</strong></td>
+                                <td><strong>AI 与系统交互</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>两种类型的 Power BI MCP Server</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>对比维度</th>
+                                <th>Modeling MCP Server（本地）</th>
+                                <th>Remote MCP Server（云端）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>主要用途</strong></td>
+                                <td>开发者建模辅助</td>
+                                <td>业务用户数据查询</td>
+                            </tr>
+                            <tr>
+                                <td><strong>核心能力</strong></td>
+                                <td>创建/修改度量值、关系、计算列；重命名列；验证 DAX</td>
+                                <td>自然语言生成 DAX；执行查询；返回自然语言结果</td>
+                            </tr>
+                            <tr>
+                                <td><strong>工作模式</strong></td>
+                                <td>连接本地 Power BI Desktop 或 Fabric 语义模型</td>
+                                <td>通过云端连接读取语义模型</td>
+                            </tr>
+                            <tr>
+                                <td><strong>安装方式</strong></td>
+                                <td>VS Code 扩展本地安装</td>
+                                <td>云端服务配置</td>
+                            </tr>
+                            <tr>
+                                <td><strong>适用角色</strong></td>
+                                <td>BI 开发工程师</td>
+                                <td>数据分析师、业务用户</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="highlight-box blue">
+                        <h4>💡 Modeling MCP Server（本地）典型场景</h4>
+                        <p>"将所有收入相关度量值按命名规范重命名" / "为 Sales 表添加计算列 Gross Profit" / "验证当前模型的 DAX 表达式是否正确"</p>
+                    </div>
+
+                    <div class="highlight-box green">
+                        <h4>💡 Remote MCP Server（云端）典型场景</h4>
+                        <p>"上季度销售额最高的前 5 个产品是什么？" / "本月客户流失率是多少？" / AI 自动生成 DAX → 执行 → 返回自然语言答案</p>
+                    </div>
+
+                    <h4>工作流程（简化版）</h4>
+                    <pre><code>用户提问（自然语言）
+    ↓
+AI 读取 MCP Server 提供的可用工具列表
+    ↓
+AI 决策：需要执行什么 Power BI 操作
+    ↓
+MCP Server 安全执行操作
+    ↓
+结果返回给用户</code></pre>
+
+                    <h4>为什么重要</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>传统方式</th>
+                                <th>使用 MCP 后</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AI 不了解你的数据集结构</td>
+                                <td>AI 自动获取模型 schema</td>
+                            </tr>
+                            <tr>
+                                <td>手动复制粘贴 schema 说明</td>
+                                <td>AI 直接连接读取</td>
+                            </tr>
+                            <tr>
+                                <td>维护复杂的自定义代码</td>
+                                <td>标准化协议，结构化执行</td>
+                            </tr>
+                            <tr>
+                                <td>开发者写 DAX，分析师等待</td>
+                                <td>业务用户直接用自然语言提问</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>适用角色</h4>
+                    <ul>
+                        <li><strong>数据分析师</strong>：用自然语言直接查询数据，无需写 DAX</li>
+                        <li><strong>BI 开发工程师</strong>：AI 辅助建模、自动生成度量值、批量重命名</li>
+                        <li><strong>数据工程师</strong>：将数据集暴露给 AI Agent</li>
+                        <li><strong>业务用户</strong>：自助式数据分析，降低技术门槛</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>3. Power BI PBIP 文件格式：从 PBIX 到 PBIP 的演进</h3>
+                    <p><strong>PBIP（Power BI Project）</strong> 是微软为现代 BI 开发工作流推出的项目文件格式，采用文件夹结构存储文本文件，完美适配版本控制。</p>
+
+                    <h4>核心变革</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>PBIX（传统）</th>
+                                <th>PBIP（现代）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>文件格式</strong></td>
+                                <td>单个二进制压缩包</td>
+                                <td>文件夹 + 文本文件（JSON/YAML）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>版本控制</strong></td>
+                                <td>难以合并、冲突频发</td>
+                                <td>完全兼容 Git，支持代码审查</td>
+                            </tr>
+                            <tr>
+                                <td><strong>可读性</strong></td>
+                                <td>闭源格式，无法直接查看内容</td>
+                                <td>人类可读，易于理解和审计</td>
+                            </tr>
+                            <tr>
+                                <td><strong>协作模式</strong></td>
+                                <td>"锁定-编辑-解锁"模式</td>
+                                <td>并行开发，独立分支</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CI/CD 友好度</strong></td>
+                                <td>低</td>
+                                <td>高</td>
+                            </tr>
+                            <tr>
+                                <td><strong>存储内容</strong></td>
+                                <td>混合数据、报表、模型</td>
+                                <td>报表(<code>.pbir</code>)、模型(<code>.pbim</code>)、语义模型(TMDL格式)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>PBIP 文件结构</h4>
+                    <pre><code>MyReport/
+├── .pbip/
+│   ├── Report/
+│   │   └── report.json           # 报表布局与配置
+│   └── SemanticModel/
+│       └── model.bim             # TMDL 格式的语义模型
+├── Datasets/
+│   └── dataset.json
+└── [MyReport].pbix            # 本地缓存副本（Git 忽略）</code></pre>
+
+                    <h4>迁移路径与工具</h4>
+                    <ul>
+                        <li><strong>手动转换</strong>：Power BI Desktop → 文件 → 另存为 PBIP</li>
+                        <li><strong>自动化转换</strong>：PowerShell 模块 <code>PBIXtoPBIP_PBITConversion</code> 可批量处理</li>
+                        <li><strong>Git 集成</strong>：VS Code 原生支持 PBIP 项目的 Git 操作</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>4. MCP Modeling Server 与 AI 直接操作 PBIP 的对比</h3>
+                    <p>在 AI 赋能 Power BI 开发的场景中，存在两种主要的 AI 操作方式。</p>
+
+                    <h4>核心区别</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>维度</th>
+                                <th>MCP Modeling Server</th>
+                                <th>AI 直接操作 PBIP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>连接方式</strong></td>
+                                <td>实时连接本地/云端模型</td>
+                                <td>直接读写项目文件</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DAX 能力</strong></td>
+                                <td>✅ 生成 + 执行验证</td>
+                                <td>❌ 仅生成，需手动验证</td>
+                            </tr>
+                            <tr>
+                                <td><strong>版本控制</strong></td>
+                                <td>❌ 无原生 Git 支持</td>
+                                <td>✅ 完全兼容 Git</td>
+                            </tr>
+                            <tr>
+                                <td><strong>报表布局</strong></td>
+                                <td>❌ 不可操作</td>
+                                <td>✅ 可编辑 report.json</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>使用建议</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>场景</th>
+                                <th>推荐方案</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>建模开发 + 实时调试</strong></td>
+                                <td>MCP Server</td>
+                            </tr>
+                            <tr>
+                                <td><strong>版本控制 + 团队协作</strong></td>
+                                <td>PBIP + Git</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DAX 验证</strong></td>
+                                <td>两者结合（PBIP 开发 → MCP 验证）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr>
+
+                    <h3>5. AI IDE 选择：国内外主流工具对比</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>IDE</th>
+                                <th>开发商</th>
+                                <th>核心模型</th>
+                                <th>MCP 支持</th>
+                                <th>免费额度</th>
+                                <th>特色优势</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Trae IDE</strong></td>
+                                <td>字节跳动</td>
+                                <td>MiniMax / GLM</td>
+                                <td>✅ 原生支持</td>
+                                <td>✅ 无限免费</td>
+                                <td>中文界面友好、GitHub 深度集成</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cherry Studio</strong></td>
+                                <td>国内团队</td>
+                                <td>多模型切换</td>
+                                <td>✅ 可配置</td>
+                                <td>✅ 免费</td>
+                                <td>轻量级、Prompt 管理方便</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cursor</strong></td>
+                                <td>Cursor Inc.</td>
+                                <td>Claude 3.5 / GPT-4</td>
+                                <td>✅ 原生支持</td>
+                                <td>✅ 有免费额度</td>
+                                <td>专注 AI 编码、代码补全强</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Claude Desktop</strong></td>
+                                <td>Anthropic</td>
+                                <td>Claude 系列</td>
+                                <td>✅ MCP 官方支持</td>
+                                <td>✅ 有免费额度</td>
+                                <td>DAX/Power Query 辅助强</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VS Code + Copilot</strong></td>
+                                <td>Microsoft</td>
+                                <td>GPT-4 / Codex</td>
+                                <td>✅ 扩展支持</td>
+                                <td>💰 付费订阅</td>
+                                <td>生态完善、Power BI 扩展丰富</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Codex (CLI)</strong></td>
+                                <td>OpenAI</td>
+                                <td>GPT-4</td>
+                                <td>✅ 可配置</td>
+                                <td>💰 按量付费</td>
+                                <td>终端优先、轻量高效</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="highlight-box purple">
+                        <h4>🎯 推荐组合</h4>
+                        <p><strong>入门首选</strong>：Trae IDE（免费、全中文、MCP 支持完善）｜<strong>专业开发</strong>：VS Code + Power BI Modeling MCP + Copilot｜<strong>深度定制</strong>：Claude Desktop + Power BI Modeling MCP</p>
+                    </div>
+
+                    <h2 id="section2">二、从零开始搭建 Power BI 智能体</h2>
+
+                    <p>以 <strong>Trae IDE</strong> 为例，详细阐述如何构建一个高效的 Power BI 开发智能体。</p>
+
+                    <h3>1. 智能体描述配置</h3>
+                    <p>智能体的描述定义其角色、行为规则和工作边界。</p>
+                    <pre><code># Agent Configuration Example
+name: Power BI Development Assistant
+role: |
+  你是一位资深 Power BI 开发专家，擅长：
+  - 语义模型设计与优化
+  - DAX 表达式编写与调优
+  - Power Query M 语言开发
+  - 报表可视化最佳实践
+  - pbip 格式与tmdl 代码理解开发
+  - Git 版本控制与 CI/CD 流程
+
+workflow: |
+  1. 理解用户需求，明确任务目标
+  2. 分析现有模型结构（如有 灵活调用powerbi相关技能）
+  3. 制定实施方案
+  4. 逐步执行并验证结果
+  5. 提供清晰的修改说明和文档
+
+rules: |
+  - 遵循 Power BI 命名规范（驼峰/下划线约定）
+  - DAX 表达式需包含注释说明
+  - 所有修改需记录变更日志
+  - 涉及数据访问时确认权限
+  - 生成 TMDL/TMSL 格式输出优先</code></pre>
+
+                    <h3>2. MCP 服务配置</h3>
+
+                    <h4>核心 MCP 服务器</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MCP 服务器</th>
+                                <th>用途</th>
+                                <th>安装方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>powerbi-modeling-mcp</code></td>
+                                <td>语义模型 CRUD、DAX 生成、TMDL 管理</td>
+                                <td>VS Code 扩展市场</td>
+                            </tr>
+                            <tr>
+                                <td><code>figma-mcp</code></td>
+                                <td>Figma 设计稿解析、坐标提取</td>
+                                <td>npm 安装</td>
+                            </tr>
+                            <tr>
+                                <td><code>git-mcp</code></td>
+                                <td>Git 操作、PR 管理、代码审查</td>
+                                <td>内置/扩展</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>配置示例（Trae IDE）</h4>
+                    <pre><code>{
+  "mcpServers": {
+    "powerbi-modeling-mcp": {
+      "command": "path/to/powerbi-modeling-mcp.exe",
+      "args": ["--start"],
+      "type": "stdio"
+    },
+    "figma-mcp": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-figma"],
+      "env": { "FIGMA_ACCESS_TOKEN": "your-token" }
+    }
+  }
+}</code></pre>
+
+                    <h3>3. 工具集配置</h3>
+
+                    <h4>必备工具</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>工具类别</th>
+                                <th>推荐工具</th>
+                                <th>用途</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>代码编辑</strong></td>
+                                <td>VS Code / Trae IDE</td>
+                                <td>主要开发环境</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DAX 分析</strong></td>
+                                <td>DAX Studio</td>
+                                <td>查询调试、性能分析</td>
+                            </tr>
+                            <tr>
+                                <td><strong>模型编辑</strong></td>
+                                <td>Tabular Editor</td>
+                                <td>批量元数据操作</td>
+                            </tr>
+                            <tr>
+                                <td><strong>版本控制</strong></td>
+                                <td>Git + GitLens</td>
+                                <td>代码历史追踪</td>
+                            </tr>
+                            <tr>
+                                <td><strong>API 测试</strong></td>
+                                <td>Postman</td>
+                                <td>Power BI REST API 调试</td>
+                            </tr>
+                            <tr>
+                                <td><strong>文档生成</strong></td>
+                                <td>Power BI XMLA 端点</td>
+                                <td>元数据导出</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>MCP 工具能力矩阵</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>功能分类</th>
+                                <th>支持工具</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>模型读取</strong></td>
+                                <td>list_tables, list_columns, list_measures</td>
+                            </tr>
+                            <tr>
+                                <td><strong>模型修改</strong></td>
+                                <td>create_measure, update_column, create_table</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DAX 操作</strong></td>
+                                <td>write_dax, execute_dax, validate_dax</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TMDL 管理</strong></td>
+                                <td>export_tmdl, import_tmdl, commit_changes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>查询验证</strong></td>
+                                <td>run_query, get_query_plan, analyze_performance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>4. 技能（Skills）配置</h3>
+
+                    <h4>技能获取来源</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>来源</th>
+                                <th>说明</th>
+                                <th>访问方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SkillHub</strong></td>
+                                <td>腾讯技能市场(中国用户优化)</td>
+                                <td>skillhub.tencent.com</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SkillsMap</strong></td>
+                                <td>社区驱动的技能库</td>
+                                <td>skillsmp.com/zh</td>
+                            </tr>
+                            <tr>
+                                <td><strong>自建技能</strong></td>
+                                <td>根据团队需求定制</td>
+                                <td>本地 YAML/JSON 定义</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>SkillHub 安装示例</h4>
+                    <p>以 Trae IDE 为例，通过 SkillHub 安装技能的步骤：</p>
+
+                    <p><strong>步骤 1：安装 SkillHub CLI</strong></p>
+                    <pre><code># Windows (PowerShell)
+npx -y skillhub-cli
+
+# 或使用国内加速镜像
+npx -y @anthropic-ai/skillhub-cli --mirror https://skillhub-1388575217.cos.ap-guangzhou.myqcloud.com</code></pre>
+
+                    <p><strong>步骤 2：浏览并搜索技能</strong></p>
+                    <pre><code># 列出热门技能
+skillhub-cli list --sort=popular
+
+# 搜索 Power BI 相关技能
+skillhub-cli search "power bi"</code></pre>
+
+                    <p><strong>步骤 3：安装所需技能</strong></p>
+                    <pre><code># 安装单个技能
+skillhub-cli install powerbi-modeling-assistant
+
+# 安装多个技能
+skillhub-cli install dax-optimizer m-query-generator
+
+# 指定安装到项目目录
+skillhub-cli install powerbi-expert --path ./skills</code></pre>
+
+                    <p><strong>步骤 4：验证安装</strong></p>
+                    <pre><code># 查看已安装的技能
+skillhub-cli list --installed
+
+# 更新技能
+skillhub-cli update powerbi-modeling-assistant</code></pre>
+
+                    <h4>推荐预置技能</h4>
+                    <ul>
+                        <li><code>powerbi-expert</code>：高级建模模式、最佳实践建议</li>
+                        <li><code>dax-optimization</code>：DAX 性能诊断与优化建议</li>
+                        <li><code>m-query-generator</code>：Power Query 代码自动生成</li>
+                        <li><code>semantic-model-auditor</code>：模型健康检查与改进建议</li>
+                        <li><code>svg-visual-creator</code>：SVG 自定义视觉对象开发</li>
+                    </ul>
+
+                    <h2 id="section3">三、实际用例详解</h2>
+
+                    <h3>用例 1：分析并解读 PBIP 报表文件</h3>
+                    <p><strong>场景</strong>：接手新项目，需要快速熟悉现有报表结构。</p>
+
+                    <p><strong>执行流程</strong>：</p>
+                    <pre><code>1. 加载 PBIP 项目文件
+   ↓
+2. 解析 TMDL/模型.bim，提取：
+   - 表结构（tables, columns, relationships）
+   - 度量值定义（measures, calculated columns）
+   - 安全配置（RLS, roles）
+   ↓
+3. 分析报表布局（report.json）
+   - 可视化组件类型与位置
+   - 页面结构与导航
+   ↓
+4. 生成总结报告</code></pre>
+
+                    <p><strong>AI 输出示例</strong>：</p>
+                    <pre><code>## 📊 项目结构总结
+
+### 语义模型概览
+
+- **表数量**：8 张事实表、5 张维度表
+- **关系类型**：1:1（3）、*:1（12）、*:*
+- **度量值总数**：45 个，其中时间智能度量值 12 个
+
+### 关键发现
+
+- ⚠️ 发现 3 个隐藏列（未在报表中使用）
+- ⚠️ 存在 2 个休眠关系（未激活）
+- ✅ 命名规范遵循良好
+
+### 建议事项
+
+1. 考虑合并"Customer"维度的重复字段
+2. 激活休眠的"Date-ChooseDate"关系</code></pre>
+
+                    <hr>
+
+                    <h3>用例 2：Power Query 数据处理与复杂 ETL</h3>
+                    <p><strong>场景</strong>：将"脏数据"转换为干净格式，并处理多数据源的复杂 ETL 流程。</p>
+
+                    <h4>2.1 常见数据问题与处理</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>问题</th>
+                                <th>识别特征</th>
+                                <th>AI 处理方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>多行表头</strong></td>
+                                <td>表头跨 2+ 行</td>
+                                <td>加载时不勾选"我的表有标题行"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>宽表格式</strong></td>
+                                <td>指标分散多列</td>
+                                <td>使用"逆透视其他列"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>缺失值</strong></td>
+                                <td>空白单元格</td>
+                                <td>Fill Down 或替换</td>
+                            </tr>
+                            <tr>
+                                <td><strong>类型混乱</strong></td>
+                                <td>数字存文本</td>
+                                <td>显式类型转换</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>2.2 AI 辅助 ETL 流程</h4>
+                    <pre><code>多数据源（SQL/Excel/API/CSV）
+    ↓
+AI 诊断数据质量
+    ↓
+AI 生成转换逻辑（UI + M 代码）
+    ↓
+合并/追加查询
+    ↓
+清洗与标准化
+    ↓
+加载到目标模型</code></pre>
+
+                    <h4>2.3 复杂 ETL M 代码示例</h4>
+                    <pre><code>// 多数据源合并 + 清洗 + 转换
+let
+    // 1. 从多个 CSV 文件合并
+    Source = Folder.Files("C:\Data"),
+    FilterCSV = Table.SelectRows(Source, each [Extension] = ".csv"),
+    CombinedCSV = Table.Combine(
+        List.Transform(FilterCSV[Content], Csv.Document)
+    ),
+
+    // 2. 提升标题并清理
+    Headers = Table.PromoteHeaders(CombinedCSV),
+    CleanNames = Table.RenameColumns(Headers,</code></pre>
+
+                    <h4>2.4 传统 vs AI 辅助对比</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>维度</th>
+                                <th>传统方式</th>
+                                <th>AI + UI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>问题诊断</strong></td>
+                                <td>依赖经验</td>
+                                <td>AI 自动识别</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ETL 效率</strong></td>
+                                <td>手动编写多步</td>
+                                <td>AI 生成转换链</td>
+                            </tr>
+                            <tr>
+                                <td><strong>错误率</strong></td>
+                                <td>手动操作高</td>
+                                <td>AI 驱动的准备减少 30% 错误</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="highlight-box orange">
+                        <h4>⚠️ 关键警告</h4>
+                        <p>逆透视选项：用"逆透视其他列"，不是"逆透视列"｜大小写敏感："Sales" ≠ "sales"｜日期区域：用"使用区域设置"转换日期｜金额类型：使用 Decimal Number 避免精度问题</p>
+                    </div>
+
+                    <hr>
+
+                    <h3>用例 3：从概念会议到完成模型</h3>
+                    <p><strong>场景</strong>：业务方提出需求，AI 辅助完成从需求分析到模型上线的完整流程。</p>
+
+                    <p><strong>需求 → 模型 → 报表的 AI 协作链路</strong>：</p>
+                    <pre><code>业务需求（自然语言）
+    ↓ 【需求解析】
+AI 识别核心实体：客户、产品、订单、日期
+    ↓ 【ER 图生成】
+自动绘制星型模型结构图
+    ↓ 【表关系定义】
+建议事实表与维度表关系配置
+    ↓ 【代码生成】
+   - Power Query M 语言
+   - DAX 度量值模板
+   - 初始报表布局
+    ↓ 【人工审核 + 调整】
+    ↓ 【提交部署】</code></pre>
+
+                    <p><strong>AI 辅助产出示例</strong>：</p>
+                    <pre><code>// AI 生成的 YTD 销量度量值模板
+YTD Total Sales =
+CALCULATE(
+    [Total Sales],
+    DATESYTD('Date'[Date]),
+    REMOVEFILTERS('Date')
+)
+
+// AI 识别的需求表结构
+Table: Fact_Sales
+- OrderKey (PK)
+- CustomerKey (FK → Dim_Customer)
+- ProductKey (FK → Dim_Product)
+- DateKey (FK → Dim_Date)
+- Quantity
+- UnitPrice
+- TotalAmount</code></pre>
+
+                    <hr>
+
+                    <h3>用例 4：批量化操作</h3>
+
+                    <h4>4.1 度量值分类与翻译</h4>
+                    <p><strong>痛点</strong>：多语言报表需要维护度量值的多种翻译版本。</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>操作</th>
+                                <th>传统方式</th>
+                                <th>AI 辅助方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>重命名 50 个度量值</td>
+                                <td>手动逐个修改</td>
+                                <td>自然语言："将所有销售类度量值前缀改为 <code>Sales_</code>"</td>
+                            </tr>
+                            <tr>
+                                <td>添加分类标签</td>
+                                <td>Excel 表格管理，易出错</td>
+                                <td>AI 自动识别业务主题，批量打标</td>
+                            </tr>
+                            <tr>
+                                <td>多语言翻译</td>
+                                <td>逐一复制粘贴翻译</td>
+                                <td>AI 批量翻译，保持术语一致性</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>4.2 批量元数据更新</h4>
+                    <pre><code># AI 批量修改配置示例
+operations:
+  - type: update_column_properties
+    filter: "table.name == 'Dim_Customer' && column.isHidden"
+    changes:
+      isHidden: false
+      description: "客户维度关键属性"
+
+  - type: categorize_measures
+    pattern: "*Sales*"
+    category: "销售指标"
+    folder: "Sales Metrics"</code></pre>
+
+                    <hr>
+
+                    <h3>用例 5：定制化视觉对象开发</h3>
+
+                    <h4>5.1 SVG 视觉对象</h4>
+                    <p>AI 可以辅助生成复杂的 SVG 视觉对象，结合 DAX 动态控制：</p>
+                    <pre><code>// AI 生成的动态 SVG KPI 卡片
+SVG_KPI_Card =
+VAR CurrentValue = [Total Sales]
+VAR TargetValue = [Sales Target]
+VAR Percent = DIVIDE(CurrentValue, TargetValue, 0)
+RETURN
+"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'>
+    <rect width='100%' height='100%' fill='#f0f0f0' rx='8'/>
+    <circle cx='100' cy='50' r='40' fill='none' stroke='#ddd' stroke-width='8'/>
+    <circle cx='100' cy='50' r='40' fill='none' stroke='#4CAF50' stroke-width='8'
+        stroke-dasharray='" & (2 * PI() * 40 * Percent) & " " & (2 * PI() * 40) & "'/>
+    <text x='100' y='50' text-anchor='middle' dy='.3em' font-size='14'>" & FORMAT(Percent, "0%") & "</text>
+</svg>"</code></pre>
+
+                    <h4>5.2 HTML Content 视觉对象</h4>
+                    <p>AI 可生成交互式 HTML 视觉对象：</p>
+                    <pre><code>&lt;!-- AI 生成的动态表格 HTML 模板 --&gt;
+&lt;div class="interactive-table"&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th onclick="sortTable(0)"&gt;产品名称 ▲▼&lt;/th&gt;
+                &lt;th onclick="sortTable(1)"&gt;销量 ▲▼&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            {{#each data}}
+            &lt;tr class="{{#if highlight}}highlight{{/if}}"&gt;
+                &lt;td&gt;{{ProductName}}&lt;/td&gt;
+                &lt;td class="number"&gt;{{formatNumber Quantity}}&lt;/td&gt;
+            &lt;/tr&gt;
+            {{/each}}
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+                    <h4>5.3 Deneb 自定义视觉</h4>
+                    <p>Deneb 支持 Vega/Vega-Lite 声明式语法，AI 可辅助生成复杂可视化：</p>
+                    <pre><code>// AI 生成的 Deneb 桑基图配置
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "用户流转告警",
+  "width": 800,
+  "height": 400,
+  "mark": { "type": "sankey", "innerRadius": 20 },
+  "encoding": {
+    "nodes": {
+      "field": "stage",
+      "type": "nominal"
+    },
+    "links": {
+      "sourceField": "from",
+      "targetField": "to",
+      "valueField": "count"
+    }
+  }
+}</code></pre>
+
+                    <hr>
+
+                    <h3>用例 6：模型分析与 DAX 优化</h3>
+
+                    <h4>6.1 AI 驱动的性能分析流程</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>阶段</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. 性能数据采集</strong></td>
+                                <td>DAX Studio 查询追踪、Power BI Performance Analyzer 日志、XMLA 端点查询统计</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. AI 智能诊断</strong></td>
+                                <td>识别高耗时查询、检测冗余计算、发现阻塞式依赖链</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. 优化建议生成</strong></td>
+                                <td>建议创建计算组、识别可物化的重复计算、发现需要优化的 DAX 模式</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. 自动修复（部分场景）</strong></td>
+                                <td>预计算公共表达式、重写低效 FILTER 嵌套、移除不必要的 CALCULATE 上下文转换</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>6.2 AI 优化建议示例</h4>
+                    <p><strong>问题</strong>：<code>[Total Revenue YTD]</code> 存在嵌套 FILTER 导致性能下降</p>
+
+                    <p><strong>当前 DAX</strong>：</p>
+                    <pre><code>CALCULATE(
+    SUM(Sales[Revenue]),
+    FILTER(ALL(Date), Date[Year] = MAX(Date[Year])),
+    FILTER(ALL(Product), Product[Category] = MAX(Product[Category]))
+)</code></pre>
+
+                    <p><strong>AI 优化后</strong>：</p>
+                    <pre><code>CALCULATE(
+    SUM(Sales[Revenue]),
+    KEEPFILTERS(Date[Year] = MAX(Date[Year])),
+    KEEPFILTERS(Product[Category] = MAX(Product[Category]))
+)</code></pre>
+
+                    <div class="highlight-box green">
+                        <h4>✅ 预期提升</h4>
+                        <p>查询时间减少 40-60%</p>
+                    </div>
+
+                    <hr>
+
+                    <h3>用例 7：基于 Figma 设计稿的视觉对象精准调整</h3>
+
+                    <h4>7.1 工作流程</h4>
+                    <pre><code>┌─────────────────────────────────────────────────────────────┐
+│           Figma → Power BI 视觉对象像素级对齐                  │
+└─────────────────────────────────────────────────────────────┘
+
+    ┌──────────────┐
+    │ Figma 设计稿  │  ← UI/UX 设计师提供
+    │ 标注尺寸/位置 │
+    └──────┬───────┘
+           │ Figma MCP 提取坐标
+           ▼
+    AI 解析输出：
+    - 卡片尺寸：240x120 px
+    - 左上角坐标：(40, 80)
+    - 内边距：16px
+    - 圆角：8px
+    - 字体：Inter, 14px, #333333
+           │ AI 生成调整指令
+           ▼
+    Power BI 视觉对象调整命令：
+    - SET Card_Title X=40 Y=80 Width=240 Height=120
+    - SET Card_Title Padding=16 CornerRadius=8
+    - UPDATE TextStyle FontFamily="Inter" Size=14 Color="#333"</code></pre>
+
+                    <h4>7.2 AI 辅助设计系统对齐</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Figma 元素</th>
+                                <th>Power BI 属性映射</th>
+                                <th>调整方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>文本框 14px</td>
+                                <td>字体大小</td>
+                                <td><code>TextSize = 14</code></td>
+                            </tr>
+                            <tr>
+                                <td>颜色 #4F46E5</td>
+                                <td>主题色</td>
+                                <td>映射到品牌色变量</td>
+                            </tr>
+                            <tr>
+                                <td>间距 16px</td>
+                                <td>内边距</td>
+                                <td><code>Padding = 16</code></td>
+                            </tr>
+                            <tr>
+                                <td>圆角 8px</td>
+                                <td>矩形圆角</td>
+                                <td><code>CornerRadius = 8</code></td>
+                            </tr>
+                            <tr>
+                                <td>阴影 0 4px 8px</td>
+                                <td>效果</td>
+                                <td>映射为 Power BI 阴影</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr>
+
+                    <h3>用例 8：基于 PBIP 的变更管理与 CI/CD</h3>
+
+                    <h4>8.1 Git 工作流集成</h4>
+                    <pre><code>开发分支 (feature/xxx)
+      │
+      ▼
+┌─────────────────┐
+│  本地 PBIP 开发  │
+│  Power BI Desktop│
+└────────┬────────┘
+         │ git commit
+         ▼
+┌─────────────────┐
+│   Pull Request  │
+│   代码审查       │
+└────────┬────────┘
+         │ 审批通过
+         ▼
+┌─────────────────┐
+│  CI 自动化检查   │
+│  - TMDL 语法验证 │
+│  - 命名规范检查  │
+│  - 性能基线检查  │
+└────────┬────────┘
+         │ 通过
+         ▼
+┌─────────────────┐
+│  CD 部署流水线  │
+│  DEV → TEST    │
+│  TEST → PROD   │
+└─────────────────┘</code></pre>
+
+                    <h4>8.2 变更日志自动生成</h4>
+                    <pre><code># AI 生成的变更日志示例
+version: "1.2.0"
+date: "2026-03-27"
+author: "Claude (via Power BI Modeling MCP)"
+
+changes:
+  - type: "added"
+    scope: "semantic_model"
+    items:
+      - "新增 Fact_Service 表（服务使用明细）"
+      - "新增 [Service Revenue] 度量值"
+
+  - type: "modified"
+    scope: "measure"
+    items:
+      - "优化 [Total Sales YTD]：性能提升 35%"
+      - "重命名 [Revenue] → [Total Revenue]"
+
+  - type: "deprecated"
+    scope: "column"
+    items:
+      - "标记 [Legacy_Code] 为废弃，2026-Q2 移除"
+
+breaking_changes: []
+
+migration_guide: |
+  如需使用新表结构，请在 Power BI Desktop 中刷新数据模型。
+  旧版 [Revenue] 度量值已保留为兼容层，建议逐步迁移至 [Total Revenue]。</code></pre>
+
+                    <h2 id="section4">四、进一步展望</h2>
+
+                    <h3>1. 自定义可视化图表：Deneb 与 AI 的深度结合</h3>
+                    <p><strong>Deneb</strong> 是 Power BI 官方认证的自定义视觉插件，支持 Vega/Vega-Lite 声明式语法，让用户无需编写 JavaScript 即可创建复杂可视化。</p>
+
+                    <h4>Deneb 的 AI 增强潜力</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>能力维度</th>
+                                <th>当前状态</th>
+                                <th>AI 增强方向</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>图表开发</td>
+                                <td>手动编写 Vega JSON</td>
+                                <td>AI 根据数据特征推荐最佳图表类型</td>
+                            </tr>
+                            <tr>
+                                <td>样式定制</td>
+                                <td>逐属性调整</td>
+                                <td>自然语言描述 → 自动生成配置</td>
+                            </tr>
+                            <tr>
+                                <td>交互实现</td>
+                                <td>复杂 event handler</td>
+                                <td>AI 辅助编写交互逻辑</td>
+                            </tr>
+                            <tr>
+                                <td>性能优化</td>
+                                <td>手动指定渲染策略</td>
+                                <td>AI 分析数据量级，推荐最优渲染方式</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>社区资源推荐</h4>
+                    <ul>
+                        <li><strong>官方文档</strong>：deneb-viz.github.io</li>
+                        <li><strong>社区示例库</strong>：GitHub <code>deneb-viz/deneb-examples</code></li>
+                        <li><strong>技能库</strong>：<code>deneb-basics</code> / <code>deneb-advanced</code> 系列技能</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>2. 企业级 Git 技能库与文档自动化</h3>
+
+                    <h4>技能库架构</h4>
+                    <pre><code>┌─────────────────────────────────────────────────────────────┐
+│              企业级 Power BI 技能库架构                       │
+└─────────────────────────────────────────────────────────────┘
+
+    ┌─────────────────────────────────────────────────────────┐
+    │                    SkillHub（技能分发层）                 │
+    │  - 内部技能发布                                          │
+    │  - 版本管理                                              │
+    │  - 搜索与发现                                            │
+    └───────────────────────┬─────────────────────────────────┘
+                            │
+    ┌───────────────────────┴─────────────────────────────────┐
+    │                  技能仓库层（Git 存储）                   │
+    │                                                         │
+    │  powerbi-skills/                                        │
+    │  ├── naming-standards/         # 命名规范技能            │
+    │  │   ├── skill.yaml                                      │
+    │  │   ├── rules/                                          │
+    │  │   └── tests/                                          │
+    │  │                                                         │
+    │  ├── dax-templates/             # DAX 模板库            │
+    │  │   ├── time-intelligence/                              │</code></pre>
+
+                    <h4>文档自动化能力</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>文档类型</th>
+                                <th>自动化程度</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>度量值定义文档</td>
+                                <td>✅ 完全自动</td>
+                                <td>AI 生成计算逻辑说明</td>
+                            </tr>
+                            <tr>
+                                <td>变更历史记录</td>
+                                <td>✅ 完全自动</td>
+                                <td>AI 生成变更说明与影响分析</td>
+                            </tr>
+                            <tr>
+                                <td>API 接口文档</td>
+                                <td>✅ 完全自动</td>
+                                <td>AI 补充使用示例</td>
+                            </tr>
+                            <tr>
+                                <td>业务术语词典</td>
+                                <td>🤝 半自动</td>
+                                <td>AI 建议 + 人工确认</td>
+                            </tr>
+                            <tr>
+                                <td>数据血缘图</td>
+                                <td>🤝 半自动</td>
+                                <td>AI 推断 + 人工标注</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>审查自动化流程</h4>
+                    <pre><code>代码提交 (PR)
+      │
+      ▼
+┌─────────────────┐
+│  自动检查项      │
+│  ✓ DAX 语法     │
+│  ✓ 命名规范     │
+│  ✓ 性能基线     │
+│  ✓ 安全敏感信息 │
+└────────┬────────┘
+         │ 全部通过
+         ▼
+┌─────────────────┐
+│  AI 代码审查     │
+│  - 逻辑正确性   │
+│  - 最佳实践     │
+│  - 潜在风险     │
+└────────┬────────┘
+         │ 建议输出
+         ▼
+    人工最终审批
+         │
+         ▼
+      合并部署</code></pre>
+
+                    <h2 id="appendix">附录：推荐学习资源</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>类型</th>
+                                <th>资源</th>
+                                <th>链接</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>官方文档</td>
+                                <td>Power BI Modeling MCP GitHub</td>
+                                <td>microsoft/PowerBI-Modeling-MCP</td>
+                            </tr>
+                            <tr>
+                                <td>官方文档</td>
+                                <td>Microsoft Learn - Copilot for Power BI</td>
+                                <td>learn.microsoft.com/power-bi/create-reports/copilot-overview</td>
+                            </tr>
+                            <tr>
+                                <td>社区博客</td>
+                                <td>SQLGene - Power BI MCP 深度解析</td>
+                                <td>sqlgene.com</td>
+                            </tr>
+                            <tr>
+                                <td>视频教程</td>
+                                <td>Connect Claude AI to Power BI Desktop</td>
+                                <td>YouTube - DataTaleAU</td>
+                            </tr>
+                            <tr>
+                                <td>工具下载</td>
+                                <td>Trae IDE</td>
+                                <td>traeide.com</td>
+                            </tr>
+                            <tr>
+                                <td>技能市场</td>
+                                <td>Deneb Custom Visual</td>
+                                <td>deneb-viz.github.io</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr>
+
+                    <p><em>本文档由 AI 辅助生成，内容基于 2026 年 3 月最新发布信息整理。</em></p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Leo<span>'s Blog</span></h3>
+                    <p>never too late to learn</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/Leo-fql" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/jie-liao-88a94237b" target="_blank">LinkedIn</a>
+                    <a href="mailto:15111231533@163.com">Email</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Leo's Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
