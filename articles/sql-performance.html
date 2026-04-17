@@ -1,9 +1,9 @@
-????<!DOCTYPE html>
+ï»¿ï»¿ï»¿ï»¿ï»¿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ó°ÏìSQLÐÔÄÜµÄÐ´·¨ - Leo's Blog</title>
+    <title>å½±å“SQLæ€§èƒ½çš„å†™æ³• - Leo's Blog</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/detail.css">
 </head>
@@ -12,11 +12,11 @@
         <nav class="nav">
             <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">Ê×Ò³</a></li>
-                <li><a href="list.html">²©¿ÍÎÄÕÂ</a></li>
-                <li><a href="../index.html#projects">¸öÈËÏîÄ¿</a></li>                <li><a href="../portfolio/list.html">×÷Æ·¼¯</a></li>
+                <li><a href="../index.html#home">é¦–é¡µ</a></li>
+                <li><a href="list.html">åšå®¢æ–‡ç« </a></li>
+                <li><a href="../index.html#projects">ä¸ªäººé¡¹ç›®</a></li>                <li><a href="../portfolio/list.html">ä½œå“é›†</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="²Ëµ¥"><span></span><span></span><span></span></button>
+            <button class="mobile-menu-btn" aria-label="èœå•"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
@@ -27,129 +27,129 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
-                    ·µ»ØÎÄÕÂÁÐ±í
+                    è¿”å›žæ–‡ç« åˆ—è¡¨
                 </a>
 
                 <header class="detail-header">
                     <span class="detail-tag">DataWarehouse</span>
-                    <h1>Ó°ÏìSQLÐÔÄÜµÄÐ´·¨</h1>
+                    <h1>å½±å“SQLæ€§èƒ½çš„å†™æ³•</h1>
                     <div class="detail-meta">
-                        <span>?? 2025Äê10ÔÂ10ÈÕ</span>
-                        <span style="margin-left: 16px;">?? ÔÄ¶ÁÊ±¼ä£º10·ÖÖÓ</span>
+                        <span>ðŸ“… 2025å¹´10æœˆ10æ—¥</span>
+                        <span style="margin-left: 16px;">â±ï¸ é˜…è¯»æ—¶é—´ï¼š10åˆ†é’Ÿ</span>
                     </div>
                 </header>
 
                 <div class="detail-content">
-                    <h2>Ò»¡¢±ÜÃâÔÚWHERE×Ó¾äÖÐÊ¹ÓÃIS NULL»òIS NOT NULL</h2>
+                    <h2>ä¸€ã€é¿å…åœ¨WHEREå­å¥ä¸­ä½¿ç”¨IS NULLæˆ–IS NOT NULL</h2>
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT id FROM table WHERE name IS NULL</pre>
                     </div>
-                    <p>Õâ»áµ¼ÖÂÈ«±íÉ¨Ãè£¬ÎÞ·¨Ê¹ÓÃË÷Òý¡£</p>
+                    <p>è¿™ä¼šå¯¼è‡´å…¨è¡¨æ‰«æï¼Œæ— æ³•ä½¿ç”¨ç´¢å¼•ã€‚</p>
 
-                    <h2>¶þ¡¢±ÜÃâÔÚWHERE×Ó¾äÖÐÊ¹ÓÃ!=»ò<>²Ù×÷·û</h2>
-                    <p>Êý¾Ý¿âÔÚ²éÑ¯Ê±£¬¶Ô != »ò <> ²Ù×÷·û²»»áÊ¹ÓÃË÷Òý£¬¶ø¶ÔÓÚ <¡¢<=¡¢=¡¢>¡¢>=¡¢BETWEEN AND£¬Êý¾Ý¿â²Å»áÊ¹ÓÃË÷Òý¡£</p>
+                    <h2>äºŒã€é¿å…åœ¨WHEREå­å¥ä¸­ä½¿ç”¨!=æˆ–<>æ“ä½œç¬¦</h2>
+                    <p>æ•°æ®åº“åœ¨æŸ¥è¯¢æ—¶ï¼Œå¯¹ != æˆ– <> æ“ä½œç¬¦ä¸ä¼šä½¿ç”¨ç´¢å¼•ï¼Œè€Œå¯¹äºŽ <ã€<=ã€=ã€>ã€>=ã€BETWEEN ANDï¼Œæ•°æ®åº“æ‰ä¼šä½¿ç”¨ç´¢å¼•ã€‚</p>
 
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM table WHERE id <> 0</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£º</strong>
+                        <strong>âœ… æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM table WHERE id < 0
 UNION ALL
 SELECT name FROM table WHERE id > 0</pre>
                     </div>
 
-                    <h2>Èý¡¢±ÜÃâÔÚWhere×Ó¾äÖÐÊ¹ÓÃORÁ´½ÓÌõ¼þ</h2>
+                    <h2>ä¸‰ã€é¿å…åœ¨Whereå­å¥ä¸­ä½¿ç”¨ORé“¾æŽ¥æ¡ä»¶</h2>
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT id FROM table WHERE name = 'Value1' OR name = 'Value2'</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£º</strong>
+                        <strong>âœ… æŽ¨èï¼š</strong>
                         <pre>SELECT id FROM table WHERE name = 'Value1'
 UNION ALL
 SELECT id FROM table WHERE name = 'Value2'</pre>
                     </div>
 
-                    <h2>ËÄ¡¢ÉÙÓÃIN»òNOT IN</h2>
-                    <p>ËäÈ»¶ÔÓÚINµÄÌõ¼þ»áÊ¹ÓÃË÷Òý£¬²»»áÈ«±íÉ¨Ãè£¬µ«ÔÚÄ³Ð©ÌØ¶¨Çé¿ö£¬Ê¹ÓÃÆäËû·½·¨Ò²ÐíÐ§¹û¸üºÃ¡£</p>
+                    <h2>å››ã€å°‘ç”¨INæˆ–NOT IN</h2>
+                    <p>è™½ç„¶å¯¹äºŽINçš„æ¡ä»¶ä¼šä½¿ç”¨ç´¢å¼•ï¼Œä¸ä¼šå…¨è¡¨æ‰«æï¼Œä½†åœ¨æŸäº›ç‰¹å®šæƒ…å†µï¼Œä½¿ç”¨å…¶ä»–æ–¹æ³•ä¹Ÿè®¸æ•ˆæžœæ›´å¥½ã€‚</p>
 
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM table WHERE id IN(1,2,3,4,5)</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£¨Á¬ÐøÊýÖµ£©£º</strong>
+                        <strong>âœ… æŽ¨èï¼ˆè¿žç»­æ•°å€¼ï¼‰ï¼š</strong>
                         <pre>SELECT name FROM table WHERE id BETWEEN 1 AND 5</pre>
                     </div>
 
-                    <h2>Îå¡¢×¢ÒâLIKEÖÐÍ¨Åä·ûµÄÊ¹ÓÃ</h2>
+                    <h2>äº”ã€æ³¨æ„LIKEä¸­é€šé…ç¬¦çš„ä½¿ç”¨</h2>
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£¨È«±íÉ¨Ãè£©£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼ˆå…¨è¡¨æ‰«æï¼‰ï¼š</strong>
                         <pre>SELECT id FROM table WHERE name LIKE '%Value%'
 SELECT id FROM table WHERE name LIKE '%Value'</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£¨Ê¹ÓÃË÷Òý£©£º</strong>
+                        <strong>âœ… æŽ¨èï¼ˆä½¿ç”¨ç´¢å¼•ï¼‰ï¼š</strong>
                         <pre>SELECT id FROM table WHERE name LIKE 'Value%'</pre>
                     </div>
 
-                    <h2>Áù¡¢±ÜÃâÔÚWhere×Ó¾äÖÐ¶Ô×Ö¶Î½øÐÐ±í´ïÊ½²Ù×÷</h2>
+                    <h2>å…­ã€é¿å…åœ¨Whereå­å¥ä¸­å¯¹å­—æ®µè¿›è¡Œè¡¨è¾¾å¼æ“ä½œ</h2>
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM table WHERE id/2 = 100</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£º</strong>
+                        <strong>âœ… æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM table WHERE id = 100*2</pre>
                     </div>
 
-                    <h2>Æß¡¢±ÜÃâÔÚWhere×Ó¾äÖÐ¶Ô×Ö¶Î½øÐÐº¯Êý²Ù×÷</h2>
+                    <h2>ä¸ƒã€é¿å…åœ¨Whereå­å¥ä¸­å¯¹å­—æ®µè¿›è¡Œå‡½æ•°æ“ä½œ</h2>
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT id FROM table WHERE SUBSTRING(name,1,8) = 'Value'
 SELECT id FROM table WHERE DATEDIFF(day,datefield,'2024-07-17') >= 0</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£º</strong>
+                        <strong>âœ… æŽ¨èï¼š</strong>
                         <pre>SELECT id FROM table WHERE name LIKE 'Value%'
 SELECT id FROM table WHERE datefield <= '2024-07-17'</pre>
                     </div>
 
-                    <h2>°Ë¡¢ÔÚ×Ó²éÑ¯ÖÐÓÃEXISTS´úÌæIN</h2>
+                    <h2>å…«ã€åœ¨å­æŸ¥è¯¢ä¸­ç”¨EXISTSä»£æ›¿IN</h2>
                     <div class="highlight-box blue">
-                        <strong>? ²»ÍÆ¼ö£º</strong>
+                        <strong>âŒ ä¸æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM a WHERE id IN(SELECT id FROM b)</pre>
                     </div>
 
                     <div class="tip-box">
-                        <strong>? ÍÆ¼ö£º</strong>
+                        <strong>âœ… æŽ¨èï¼š</strong>
                         <pre>SELECT name FROM a WHERE EXISTS(SELECT 1 FROM b WHERE id = a.id)</pre>
                     </div>
 
-                    <h2>¾Å¡¢SQLÊ²Ã´Ê±ºò²»×ßË÷Òý</h2>
+                    <h2>ä¹ã€SQLä»€ä¹ˆæ—¶å€™ä¸èµ°ç´¢å¼•</h2>
                     <ol>
-                        <li>Ìõ¼þ×Ö¶ÎÑ¡ÔñÐÔÈõ£¬²é³öµÄ½á¹û¼¯½Ï´ó£¬²»×ßË÷Òý</li>
-                        <li>WhereÌõ¼þµÈºÅÁ½±ß×Ö¶ÎÀàÐÍ²»Í¬£¬²»×ßË÷Òý</li>
-                        <li>ÓÅ»¯Æ÷·ÖÎöµÄÍ³¼ÆÐÅÏ¢³Â¾ÉÒ²¿ÉÄÜµ¼ÖÂ²»×ßË÷Òý</li>
-                        <li>Ë÷Òý×Ö¶Î IS NULL ²»×ßË÷Òý</li>
-                        <li>¶ÔÓÚCOUNT(*)µ±Ë÷Òý×Ö¶ÎÓÐNOT NULLÔ¼ÊøÊ±×ßË÷Òý£¬·ñÔò²»×ßË÷Òý</li>
-                        <li>LIKEºóÃæµÄ×Ö·ûµ±Ê×Î»ÎªÍ¨Åä·ûÊ±²»×ßË÷Òý</li>
-                        <li>Ê¹ÓÃ²»µÈÓÚ²Ù×÷·ûÈç£º<>¡¢!= µÈ²»×ßË÷Òý</li>
-                        <li>Ë÷Òý×Ö¶ÎÇ°¼ÓÁËº¯Êý»ò²Î¼ÓÁËÔËËã²»×ßË÷Òý</li>
+                        <li>æ¡ä»¶å­—æ®µé€‰æ‹©æ€§å¼±ï¼ŒæŸ¥å‡ºçš„ç»“æžœé›†è¾ƒå¤§ï¼Œä¸èµ°ç´¢å¼•</li>
+                        <li>Whereæ¡ä»¶ç­‰å·ä¸¤è¾¹å­—æ®µç±»åž‹ä¸åŒï¼Œä¸èµ°ç´¢å¼•</li>
+                        <li>ä¼˜åŒ–å™¨åˆ†æžçš„ç»Ÿè®¡ä¿¡æ¯é™ˆæ—§ä¹Ÿå¯èƒ½å¯¼è‡´ä¸èµ°ç´¢å¼•</li>
+                        <li>ç´¢å¼•å­—æ®µ IS NULL ä¸èµ°ç´¢å¼•</li>
+                        <li>å¯¹äºŽCOUNT(*)å½“ç´¢å¼•å­—æ®µæœ‰NOT NULLçº¦æŸæ—¶èµ°ç´¢å¼•ï¼Œå¦åˆ™ä¸èµ°ç´¢å¼•</li>
+                        <li>LIKEåŽé¢çš„å­—ç¬¦å½“é¦–ä½ä¸ºé€šé…ç¬¦æ—¶ä¸èµ°ç´¢å¼•</li>
+                        <li>ä½¿ç”¨ä¸ç­‰äºŽæ“ä½œç¬¦å¦‚ï¼š<>ã€!= ç­‰ä¸èµ°ç´¢å¼•</li>
+                        <li>ç´¢å¼•å­—æ®µå‰åŠ äº†å‡½æ•°æˆ–å‚åŠ äº†è¿ç®—ä¸èµ°ç´¢å¼•</li>
                     </ol>
 
-                    <h2>Ê®¡¢×Ü½á</h2>
-                    <p><strong>ºËÐÄÔ­Ôò£º²»ÒªÔÚWhere×Ó¾äÖÐµÄ"="×ó±ß½øÐÐº¯Êý¡¢ËãÊõÔËËã»òÆäËû±í´ïÊ½ÔËËã¡£</strong></p>
-                    <p>×ñÑ­ÕâÐ©×î¼ÑÊµ¼ù£¬¿ÉÒÔÏÔÖøÌáÉýSQL²éÑ¯ÐÔÄÜ£¬¼õÉÙÊý¾Ý¿â¸ºÔØ¡£</p>
+                    <h2>åã€æ€»ç»“</h2>
+                    <p><strong>æ ¸å¿ƒåŽŸåˆ™ï¼šä¸è¦åœ¨Whereå­å¥ä¸­çš„"="å·¦è¾¹è¿›è¡Œå‡½æ•°ã€ç®—æœ¯è¿ç®—æˆ–å…¶ä»–è¡¨è¾¾å¼è¿ç®—ã€‚</strong></p>
+                    <p>éµå¾ªè¿™äº›æœ€ä½³å®žè·µï¼Œå¯ä»¥æ˜¾è‘—æå‡SQLæŸ¥è¯¢æ€§èƒ½ï¼Œå‡å°‘æ•°æ®åº“è´Ÿè½½ã€‚</p>
                 </div>
             </div>
         </article>

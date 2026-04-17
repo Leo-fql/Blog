@@ -1,9 +1,9 @@
-????<!DOCTYPE html>
+ï»¿ï»¿ï»¿ï»¿ï»¿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PythonË¢ĞÂTableauºÍPowerBIÊı¾İÔ´ - Leo's Blog</title>
+    <title>Pythonåˆ·æ–°Tableauå’ŒPowerBIæ•°æ®æº - Leo's Blog</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/detail.css">
 </head>
@@ -12,11 +12,11 @@
         <nav class="nav">
             <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">Ê×Ò³</a></li>
-                <li><a href="list.html">²©¿ÍÎÄÕÂ</a></li>
-                <li><a href="../index.html#projects">¸öÈËÏîÄ¿</a></li>                <li><a href="../portfolio/list.html">×÷Æ·¼¯</a></li>
+                <li><a href="../index.html#home">é¦–é¡µ</a></li>
+                <li><a href="list.html">åšå®¢æ–‡ç« </a></li>
+                <li><a href="../index.html#projects">ä¸ªäººé¡¹ç›®</a></li>                <li><a href="../portfolio/list.html">ä½œå“é›†</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="²Ëµ¥"><span></span><span></span><span></span></button>
+            <button class="mobile-menu-btn" aria-label="èœå•"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
@@ -27,40 +27,40 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
-                    ·µ»ØÎÄÕÂÁĞ±í
+                    è¿”å›æ–‡ç« åˆ—è¡¨
                 </a>
 
                 <header class="detail-header">
                     <span class="detail-tag">PowerBI</span>
-                    <h1>PythonË¢ĞÂTableauºÍPowerBIÊı¾İÔ´</h1>
+                    <h1>Pythonåˆ·æ–°Tableauå’ŒPowerBIæ•°æ®æº</h1>
                     <div class="detail-meta">
-                        <span>?? 2025Äê11ÔÂ10ÈÕ</span>
-                        <span style="margin-left: 16px;">?? ÔÄ¶ÁÊ±¼ä£º10·ÖÖÓ</span>
+                        <span>ğŸ“… 2025å¹´11æœˆ10æ—¥</span>
+                        <span style="margin-left: 16px;">â±ï¸ é˜…è¯»æ—¶é—´ï¼š10åˆ†é’Ÿ</span>
                     </div>
                 </header>
 
                 <div class="detail-content">
-                    <h2>Ò»¡¢¸ÅÊö</h2>
-                    <p>±¾ÎÄ½éÉÜÈçºÎÊ¹ÓÃPython½Å±¾×Ô¶¯Ë¢ĞÂPower BIºÍTableauµÄÊı¾İÔ´£¬ÊµÏÖÊı¾İ¸üĞÂµÄ×Ô¶¯»¯¡£</p>
+                    <h2>ä¸€ã€æ¦‚è¿°</h2>
+                    <p>æœ¬æ–‡ä»‹ç»å¦‚ä½•ä½¿ç”¨Pythonè„šæœ¬è‡ªåŠ¨åˆ·æ–°Power BIå’ŒTableauçš„æ•°æ®æºï¼Œå®ç°æ•°æ®æ›´æ–°çš„è‡ªåŠ¨åŒ–ã€‚</p>
 
-                    <h2>¶ş¡¢Power BIÊı¾İÔ´Ë¢ĞÂ</h2>
-                    <h3>Ç°ÖÃÌõ¼ş</h3>
+                    <h2>äºŒã€Power BIæ•°æ®æºåˆ·æ–°</h2>
+                    <h3>å‰ç½®æ¡ä»¶</h3>
                     <ul>
-                        <li>Azure ADÓ¦ÓÃ×¢²á</li>
-                        <li>»ñÈ¡Client IDºÍClient Secret</li>
+                        <li>Azure ADåº”ç”¨æ³¨å†Œ</li>
+                        <li>è·å–Client IDå’ŒClient Secret</li>
                         <li>Tenant ID</li>
                     </ul>
 
-                    <h3>Python´úÂëÊ¾Àı</h3>
+                    <h3>Pythonä»£ç ç¤ºä¾‹</h3>
                     <pre>
 import requests
 
-# »ñÈ¡ Azure AD Ó¦ÓÃÆ¾Ö¤
+# è·å– Azure AD åº”ç”¨å‡­è¯
 client_id = "your_client_id"
 client_secret = "your_client_secret"
 tenant_id = "your_tenant_id"
 
-# »ñÈ¡·ÃÎÊÁîÅÆ
+# è·å–è®¿é—®ä»¤ç‰Œ
 auth_url = f"https://login.microsoftonline.com/{tenant_id}/oauth2/token"
 auth_data = {
     "grant_type": "client_credentials",
@@ -72,12 +72,12 @@ auth_data = {
 response = requests.post(auth_url, data=auth_data)
 access_token = response.json()["access_token"]
 
-# ÅäÖÃÊı¾İ¼¯Ë¢ĞÂ²ÎÊı
+# é…ç½®æ•°æ®é›†åˆ·æ–°å‚æ•°
 group_id = "your_workspace_id"
 dataset_id = "your_dataset_id"
 refresh_url = f"https://api.powerbi.com/v1.0/myorg/groups/{group_id}/datasets/{dataset_id}/refreshes"
 
-# ·¢ËÍË¢ĞÂÇëÇó
+# å‘é€åˆ·æ–°è¯·æ±‚
 headers = {
     "Authorization": f"Bearer {access_token}",
     "Content-Type": "application/json"
@@ -85,26 +85,26 @@ headers = {
 
 response = requests.post(refresh_url, headers=headers)
 
-# ¼ì²éÏìÓ¦×´Ì¬
+# æ£€æŸ¥å“åº”çŠ¶æ€
 if response.status_code == 202:
-    print("Êı¾İ¼¯Ë¢ĞÂÒÑ´¥·¢£¡")
+    print("æ•°æ®é›†åˆ·æ–°å·²è§¦å‘ï¼")
 else:
-    print(f"´íÎó£º{response.status_code}, {response.text}")
+    print(f"é”™è¯¯ï¼š{response.status_code}, {response.text}")
 </pre>
 
-                    <h2>Èı¡¢TableauÊı¾İÔ´Ë¢ĞÂ</h2>
-                    <h3>Ç°ÖÃÌõ¼ş</h3>
+                    <h2>ä¸‰ã€Tableauæ•°æ®æºåˆ·æ–°</h2>
+                    <h3>å‰ç½®æ¡ä»¶</h3>
                     <ul>
-                        <li>°²×°tableauserverclient¿â</li>
-                        <li>»ñÈ¡Personal Access Token</li>
-                        <li>ÖªµÀServerµØÖ·ºÍSiteÃû³Æ</li>
+                        <li>å®‰è£…tableauserverclientåº“</li>
+                        <li>è·å–Personal Access Token</li>
+                        <li>çŸ¥é“Serveråœ°å€å’ŒSiteåç§°</li>
                     </ul>
 
-                    <h3>Python´úÂëÊ¾Àı</h3>
+                    <h3>Pythonä»£ç ç¤ºä¾‹</h3>
                     <pre>
 import tableauserverclient as TSC
 
-# ÅäÖÃ²ÎÊı
+# é…ç½®å‚æ•°
 datasource_name = 'your_datasource_name'
 workbook_name = 'your_workbook_name'
 server_address = 'https://your-tableau-server/'
@@ -124,7 +124,7 @@ def datasource_extract():
     print(f"Signing into {site_name} at {server_address}")
     
     with server.auth.sign_in(tableau_auth):
-        # Ë¢ĞÂÊı¾İÔ´
+        # åˆ·æ–°æ•°æ®æº
         for datasource in TSC.Pager(server.datasources.get):
             if datasource.name == datasource_name:
                 datasource_id = datasource.id
@@ -132,7 +132,7 @@ def datasource_extract():
                 refreshed_datasource = server.datasources.refresh(datasource)
                 break
         
-        # Ë¢ĞÂ¹¤×÷²¾
+        # åˆ·æ–°å·¥ä½œç°¿
         for workbook in TSC.Pager(server.workbooks):
             if workbook.name == workbook_name:
                 workbook_id = workbook.id
@@ -145,24 +145,24 @@ if __name__ == "__main__":
 </pre>
 
                     <div class="highlight-box blue">
-                        <strong>?? ×¢ÒâÊÂÏî£º</strong>
+                        <strong>ğŸ’¡ æ³¨æ„äº‹é¡¹ï¼š</strong>
                         <ul style="margin-top: 8px;">
-                            <li>Power BIĞèÒªFabric»òPremiumĞí¿ÉÖ¤²ÅÄÜÊ¹ÓÃAPIË¢ĞÂ</li>
-                            <li>TableauĞèÒªServer¹ÜÀíÔ±»òÊÊµ±µÄÈ¨ÏŞ</li>
-                            <li>½¨Òé½«Æ¾Ö¤´æ´¢ÔÚ°²È«µÄÎ»ÖÃ£¬²»ÒªÓ²±àÂëÔÚ½Å±¾ÖĞ</li>
+                            <li>Power BIéœ€è¦Fabricæˆ–Premiumè®¸å¯è¯æ‰èƒ½ä½¿ç”¨APIåˆ·æ–°</li>
+                            <li>Tableauéœ€è¦Serverç®¡ç†å‘˜æˆ–é€‚å½“çš„æƒé™</li>
+                            <li>å»ºè®®å°†å‡­è¯å­˜å‚¨åœ¨å®‰å…¨çš„ä½ç½®ï¼Œä¸è¦ç¡¬ç¼–ç åœ¨è„šæœ¬ä¸­</li>
                         </ul>
                     </div>
 
-                    <h2>ËÄ¡¢×Ô¶¯»¯µ÷¶È</h2>
-                    <p>¿ÉÒÔ½«ÉÏÊö½Å±¾ÅäÖÃÎª¶¨Ê±ÈÎÎñ£º</p>
+                    <h2>å››ã€è‡ªåŠ¨åŒ–è°ƒåº¦</h2>
+                    <p>å¯ä»¥å°†ä¸Šè¿°è„šæœ¬é…ç½®ä¸ºå®šæ—¶ä»»åŠ¡ï¼š</p>
                     <ul>
-                        <li><strong>Windows</strong>£ºÊ¹ÓÃÈÎÎñ¼Æ»®³ÌĞò</li>
-                        <li><strong>Linux</strong>£ºÊ¹ÓÃcrontab</li>
-                        <li><strong>ÔÆÆ½Ì¨</strong>£ºÊ¹ÓÃAzure Functions»òAWS Lambda</li>
+                        <li><strong>Windows</strong>ï¼šä½¿ç”¨ä»»åŠ¡è®¡åˆ’ç¨‹åº</li>
+                        <li><strong>Linux</strong>ï¼šä½¿ç”¨crontab</li>
+                        <li><strong>äº‘å¹³å°</strong>ï¼šä½¿ç”¨Azure Functionsæˆ–AWS Lambda</li>
                     </ul>
 
-                    <h2>Îå¡¢×Ü½á</h2>
-                    <p>Í¨¹ıPython½Å±¾ÊµÏÖBIÊı¾İÔ´µÄ×Ô¶¯Ë¢ĞÂ£¬¿ÉÒÔ´ó´ó¼õÉÙÊÖ¶¯²Ù×÷µÄ¹¤×÷Á¿£¬È·±£Êı¾İµÄ¼°Ê±¸üĞÂ¡£</p>
+                    <h2>äº”ã€æ€»ç»“</h2>
+                    <p>é€šè¿‡Pythonè„šæœ¬å®ç°BIæ•°æ®æºçš„è‡ªåŠ¨åˆ·æ–°ï¼Œå¯ä»¥å¤§å¤§å‡å°‘æ‰‹åŠ¨æ“ä½œçš„å·¥ä½œé‡ï¼Œç¡®ä¿æ•°æ®çš„åŠæ—¶æ›´æ–°ã€‚</p>
                 </div>
             </div>
         </article>
