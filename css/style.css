@@ -265,15 +265,37 @@ img {
 .skills-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    padding: 16px 20px;
-    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-    border-radius: var(--radius-lg);
+    gap: 12px;
     justify-content: center;
 }
 
-.stat-item {
-    text-align: center;
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    border-color: var(--accent-color);
+    background: var(--bg-tertiary);
+    transform: translateY(-2px);
+}
+
+.skill-tag .skill-icon {
+    font-size: 1rem;
+}
+
+.skill-tag .skill-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: normal;
 }
 
 .stat-item .stat-value {
