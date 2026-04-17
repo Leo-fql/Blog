@@ -1,9 +1,9 @@
-﻿﻿<!DOCTYPE html>
+?<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BI权限控制操作手册 - Leo's Blog</title>
+    <title>BIȨ�޿��Ʋ����ֲ� - Leo's Blog</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/detail.css">
 </head>
@@ -12,11 +12,11 @@
         <nav class="nav">
             <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">首页</a></li>
-                <li><a href="list.html">博客文章</a></li>
-                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+                <li><a href="../index.html#home">��ҳ</a></li>
+                <li><a href="list.html">��������</a></li>
+                <li><a href="../index.html#projects">������Ŀ</a></li>                <li><a href="../portfolio/list.html">��Ʒ��</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+            <button class="mobile-menu-btn" aria-label="�˵�"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
@@ -27,76 +27,76 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
-                    返回文章列表
+                    ���������б�
                 </a>
 
                 <header class="detail-header">
                     <span class="detail-tag">PowerBI</span>
-                    <h1>BI权限控制操作手册</h1>
+                    <h1>BIȨ�޿��Ʋ����ֲ�</h1>
                     <div class="detail-meta">
-                        <span>📅 2025年11月20日</span>
-                        <span style="margin-left: 16px;">⏱️ 阅读时间：10分钟</span>
+                        <span>?? 2025��11��20��</span>
+                        <span style="margin-left: 16px;">?? �Ķ�ʱ�䣺10����</span>
                     </div>
                 </header>
 
                 <div class="detail-content">
-                    <h2>一、权限控制概述</h2>
-                    <p>BI系统权限控制主要解决以下四个问题：</p>
+                    <h2>һ��Ȩ�޿��Ƹ���</h2>
+                    <p>BIϵͳȨ�޿�����Ҫ��������ĸ����⣺</p>
                     <ol>
-                        <li>用户能否在OA/企业微信上看到系统入口</li>
-                        <li>用户能否登录系统</li>
-                        <li>用户在系统上能看到哪些报表</li>
-                        <li>用户在报表中能看到哪些数据</li>
+                        <li>�û��ܷ���OA/��ҵ΢���Ͽ���ϵͳ���</li>
+                        <li>�û��ܷ��¼ϵͳ</li>
+                        <li>�û���ϵͳ���ܿ�����Щ����</li>
+                        <li>�û��ڱ������ܿ�����Щ����</li>
                     </ol>
-                    <p>据此，BI系统权限管理分为四层结构，在进行权限维护时依次进行配置。</p>
+                    <p>�ݴˣ�BIϵͳȨ�޹�����Ϊ�Ĳ�ṹ���ڽ���Ȩ��ά��ʱ���ν������á�</p>
 
-                    <h2>二、第一层：系统入口权限</h2>
-                    <h3>OA系统入口</h3>
-                    <p>系统入口显示在OA公司门户的"系统登录"中，对于所有OA用户默认显示，因此不做配置。</p>
+                    <h2>������һ�㣺ϵͳ���Ȩ��</h2>
+                    <h3>OAϵͳ���</h3>
+                    <p>ϵͳ�����ʾ��OA��˾�Ż���"ϵͳ��¼"�У���������OA�û�Ĭ����ʾ����˲������á�</p>
 
-                    <h3>企业微信入口</h3>
-                    <p>系统入口在"工作台"中显示，需要由企业微信应用管理员进行配置，只有BI系统用户才能看到该图标入口。</p>
+                    <h3>��ҵ΢�����</h3>
+                    <p>ϵͳ�����"����̨"����ʾ����Ҫ����ҵ΢��Ӧ�ù���Ա�������ã�ֻ��BIϵͳ�û����ܿ�����ͼ����ڡ�</p>
 
-                    <h2>三、第二层：用户登录权限</h2>
-                    <p>以管理员角色打开Tableau Server，在用户界面可以看到现有用户，并且在该界面可以进行新增/删除，批量新增时可以从文件中导入。</p>
+                    <h2>�����ڶ��㣺�û���¼Ȩ��</h2>
+                    <p>�Թ���Ա��ɫ��Tableau Server�����û�������Կ��������û��������ڸý�����Խ�������/ɾ������������ʱ���Դ��ļ��е��롣</p>
 
-                    <h3>批量导入格式</h3>
+                    <h3>���������ʽ</h3>
                     <ul>
-                        <li>第一列：用户名/账号</li>
-                        <li>第二列：密码</li>
-                        <li>第三列：显示名称</li>
-                        <li>第四列：用户的站点角色</li>
+                        <li>��һ�У��û���/�˺�</li>
+                        <li>�ڶ��У�����</li>
+                        <li>�����У���ʾ����</li>
+                        <li>�����У��û���վ���ɫ</li>
                     </ul>
 
                     <div class="highlight-box blue">
-                        <strong>💡 注意事项：</strong>
-                        <p style="margin-top: 8px;">登录系统需要在内网环境下，手机端需要使用VPN。</p>
+                        <strong>?? ע�����</strong>
+                        <p style="margin-top: 8px;">��¼ϵͳ��Ҫ�����������£��ֻ�����Ҫʹ��VPN��</p>
                     </div>
 
-                    <h2>四、第三层：报表权限</h2>
-                    <p>在Tableau中对相应的报表进行权限配置即可。为避免权限管理过于繁琐，目前报表权限是赋予给Tableau角色的。</p>
-                    <p>现有的角色主要按组织架构设计，对于用户而言，将用户群组更改为相应权限的角色即可。</p>
+                    <h2>�ġ������㣺����Ȩ��</h2>
+                    <p>��Tableau�ж���Ӧ�ı�������Ȩ�����ü��ɡ�Ϊ����Ȩ�޹������ڷ�����Ŀǰ����Ȩ���Ǹ����Tableau��ɫ�ġ�</p>
+                    <p>���еĽ�ɫ��Ҫ����֯�ܹ���ƣ������û����ԣ����û�Ⱥ�����Ϊ��ӦȨ�޵Ľ�ɫ���ɡ�</p>
 
-                    <h2>五、第四层：数据权限</h2>
-                    <p>根据现有的BI权限设计方案，在BW中设计了权限模型，通过HANA视图方式将权限表关联事务表，再通过权限字段进行行级别的数据控制。</p>
+                    <h2>�塢���Ĳ㣺����Ȩ��</h2>
+                    <p>�������е�BIȨ����Ʒ�������BW�������Ȩ��ģ�ͣ�ͨ��HANA��ͼ��ʽ��Ȩ�ޱ��������������ͨ��Ȩ���ֶν����м�������ݿ��ơ�</p>
 
-                    <h3>维护步骤</h3>
+                    <h3>ά������</h3>
                     <ol>
-                        <li>在BW输入事务代码进入权限表</li>
-                        <li>新增/修改权限数据</li>
-                        <li>依据为权限申请流程中的权限方案</li>
-                        <li>执行处理链进行权限维护</li>
-                        <li>刷新Tableau数据提取</li>
+                        <li>��BW��������������Ȩ�ޱ�</li>
+                        <li>����/�޸�Ȩ������</li>
+                        <li>����ΪȨ�����������е�Ȩ�޷���</li>
+                        <li>ִ�д���������Ȩ��ά��</li>
+                        <li>ˢ��Tableau������ȡ</li>
                     </ol>
 
-                    <h2>六、权限配置总结</h2>
-                    <p>当权限流程到权限配置节点时，依据以下步骤进行权限控制：</p>
+                    <h2>����Ȩ�������ܽ�</h2>
+                    <p>��Ȩ�����̵�Ȩ�����ýڵ�ʱ���������²������Ȩ�޿��ƣ�</p>
                     <ol>
-                        <li>开通用户的企业微信入口</li>
-                        <li>在BW中配置权限，执行处理链</li>
-                        <li>在Tableau Server中增删改用户信息</li>
-                        <li>配置报表默认视图</li>
-                        <li>发送邮件通知</li>
+                        <li>��ͨ�û�����ҵ΢�����</li>
+                        <li>��BW������Ȩ�ޣ�ִ�д�����</li>
+                        <li>��Tableau Server����ɾ���û���Ϣ</li>
+                        <li>���ñ���Ĭ����ͼ</li>
+                        <li>�����ʼ�֪ͨ</li>
                     </ol>
                 </div>
             </div>

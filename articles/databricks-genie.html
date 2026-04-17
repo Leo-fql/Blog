@@ -1,9 +1,9 @@
-﻿﻿﻿<!DOCTYPE html>
+??<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Databricks Genie 使用指南 - Leo's Blog</title>
+    <title>Databricks Genie ʹ��ָ�� - Leo's Blog</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/detail.css">
 </head>
@@ -12,11 +12,11 @@
         <nav class="nav">
             <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">首页</a></li>
-                <li><a href="list.html">博客文章</a></li>
-                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+                <li><a href="../index.html#home">��ҳ</a></li>
+                <li><a href="list.html">��������</a></li>
+                <li><a href="../index.html#projects">������Ŀ</a></li>                <li><a href="../portfolio/list.html">��Ʒ��</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+            <button class="mobile-menu-btn" aria-label="�˵�"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
@@ -27,91 +27,91 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
-                    返回文章列表
+                    ���������б�
                 </a>
 
                 <header class="detail-header">
                     <span class="detail-tag">AI</span>
-                    <h1>Databricks Genie 使用指南</h1>
+                    <h1>Databricks Genie ʹ��ָ��</h1>
                     <div class="detail-meta">
-                        <span>📅 2026年1月10日</span>
-                        <span style="margin-left: 16px;">⏱️ 阅读时间：10分钟</span>
+                        <span>?? 2026��1��10��</span>
+                        <span style="margin-left: 16px;">?? �Ķ�ʱ�䣺10����</span>
                     </div>
                 </header>
 
                 <div class="detail-content">
-                    <h2>一、Genie Space 概念</h2>
-                    <p>Databricks Genie 是一个AI驱动的数据分析助手，允许用户通过自然语言查询数据，自动生成SQL并返回结果。</p>
+                    <h2>һ��Genie Space ����</h2>
+                    <p>Databricks Genie ��һ��AI���������ݷ������֣������û�ͨ����Ȼ���Բ�ѯ���ݣ��Զ�����SQL�����ؽ����</p>
 
-                    <h2>二、前置条件</h2>
+                    <h2>����ǰ������</h2>
                     <h3>Unity Catalog</h3>
-                    <p>Unity Catalog 是必需的 - 提供丰富的上下文包括数据血缘、文档或查询历史。</p>
+                    <p>Unity Catalog �Ǳ���� - �ṩ�ḻ�������İ�������ѪԵ���ĵ����ѯ��ʷ��</p>
 
-                    <h3>数据要求</h3>
+                    <h3>����Ҫ��</h3>
                     <ul>
-                        <li>数据需要连贯且语义连接 - 对join操作至关重要</li>
-                        <li>数据集覆盖整体主题（干净数据，移除未使用字段）</li>
-                        <li>星型模式 - 至少需要select权限</li>
+                        <li>������Ҫ�������������� - ��join����������Ҫ</li>
+                        <li>���ݼ������������⣨�ɾ����ݣ��Ƴ�δʹ���ֶΣ�</li>
+                        <li>����ģʽ - ������ҪselectȨ��</li>
                     </ul>
 
-                    <h3>文档</h3>
-                    <p>文档和注释数据 - AI生成以节省时间</p>
+                    <h3>�ĵ�</h3>
+                    <p>�ĵ���ע������ - AI�����Խ�ʡʱ��</p>
 
-                    <h2>三、配置流程</h2>
-                    <h3>准备阶段</h3>
+                    <h2>������������</h2>
+                    <h3>׼���׶�</h3>
                     <ul>
-                        <li>示例问题和优化指令</li>
-                        <li>SQL Warehouse（需要USE权限）</li>
+                        <li>ʾ��������Ż�ָ��</li>
+                        <li>SQL Warehouse����ҪUSEȨ�ޣ�</li>
                     </ul>
 
-                    <h2>四、提升响应质量</h2>
-                    <h3>1. Instructions（指令）</h3>
-                    <p>添加额外的语义与自然语言说明，例如：</p>
+                    <h2>�ġ�������Ӧ����</h2>
+                    <h3>1. Instructions��ָ�</h3>
+                    <p>���Ӷ������������Ȼ����˵�������磺</p>
                     <ul>
-                        <li>财政年度定义</li>
-                        <li>大小写敏感说明</li>
+                        <li>������ȶ���</li>
+                        <li>��Сд����˵��</li>
                     </ul>
 
-                    <h3>2. SQL Examples（SQL示例）</h3>
-                    <p>提供如何从数据集中检索信息的示例，指导Genie如何查询数据。</p>
+                    <h3>2. SQL Examples��SQLʾ����</h3>
+                    <p>�ṩ��δ����ݼ��м�����Ϣ��ʾ����ָ��Genie��β�ѯ���ݡ�</p>
 
-                    <h3>3. Trusted Assets（可信资产）</h3>
-                    <p>预定义查询，为特定问题启用单一版本的事实。</p>
+                    <h3>3. Trusted Assets�������ʲ���</h3>
+                    <p>Ԥ�����ѯ��Ϊ�ض��������õ�һ�汾����ʵ��</p>
 
                     <div class="highlight-box blue">
-                        <strong>💡 Trusted Assets 优势：</strong>
-                        <p style="margin-top: 8px;">用户定义的查询，针对特定问题触发，确保结果的一致性和准确性。</p>
+                        <strong>?? Trusted Assets ���ƣ�</strong>
+                        <p style="margin-top: 8px;">�û�����Ĳ�ѯ������ض����ⴥ����ȷ�������һ���Ժ�׼ȷ�ԡ�</p>
                     </div>
 
-                    <h2>五、语义建模技巧</h2>
-                    <h3>实体关系</h3>
-                    <p>添加主键和外键关系</p>
+                    <h2>�塢���彨ģ����</h2>
+                    <h3>ʵ���ϵ</h3>
+                    <p>���������������ϵ</p>
 
-                    <h3>增强表和列元数据</h3>
-                    <p>为列添加注释说明</p>
+                    <h3>��ǿ������Ԫ����</h3>
+                    <p>Ϊ������ע��˵��</p>
 
-                    <h3>正确的数据类型</h3>
-                    <p>正确转换列数据类型</p>
+                    <h3>��ȷ����������</h3>
+                    <p>��ȷת������������</p>
 
-                    <h3>指令设置</h3>
+                    <h3>ָ������</h3>
                     <ul>
-                        <li>引擎或数据集说明</li>
-                        <li>数据集的领域说明</li>
+                        <li>��������ݼ�˵��</li>
+                        <li>���ݼ�������˵��</li>
                     </ul>
 
-                    <h2>六、持续优化</h2>
-                    <h3>改进Genie的方法</h3>
+                    <h2>���������Ż�</h2>
+                    <h3>�Ľ�Genie�ķ���</h3>
                     <ul>
-                        <li>评价答案质量</li>
-                        <li>提供反馈</li>
-                        <li>监控使用情况</li>
+                        <li>���۴�����</li>
+                        <li>�ṩ����</li>
+                        <li>���ʹ�����</li>
                     </ul>
 
-                    <h3>物化聚合</h3>
-                    <p>添加事实预聚合表以提升查询性能</p>
+                    <h3>�ﻯ�ۺ�</h3>
+                    <p>������ʵԤ�ۺϱ���������ѯ����</p>
 
-                    <h2>七、总结</h2>
-                    <p>Databricks Genie 通过自然语言界面降低了数据分析的门槛。通过合理的语义建模和持续优化，可以实现高效准确的数据查询体验。</p>
+                    <h2>�ߡ��ܽ�</h2>
+                    <p>Databricks Genie ͨ����Ȼ���Խ��潵�������ݷ������ż���ͨ�����������彨ģ�ͳ����Ż�������ʵ�ָ�Ч׼ȷ�����ݲ�ѯ���顣</p>
                 </div>
             </div>
         </article>

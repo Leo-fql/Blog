@@ -1,9 +1,9 @@
-﻿﻿<!DOCTYPE html>
+?<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAX别裁新解：诠释新视角 - Leo's Blog</title>
+    <title>DAX����½⣺ڹ�����ӽ� - Leo's Blog</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/detail.css">
 </head>
@@ -12,11 +12,11 @@
         <nav class="nav">
             <div class="logo"><a href="../index.html">Leo<span>'s Blog</span></a></div>
             <ul class="nav-links">
-                <li><a href="../index.html#home">首页</a></li>
-                <li><a href="list.html">博客文章</a></li>
-                <li><a href="../index.html#projects">个人项目</a></li>`n                <li><a href="../portfolio/list.html">作品集</a></li>
+                <li><a href="../index.html#home">��ҳ</a></li>
+                <li><a href="list.html">��������</a></li>
+                <li><a href="../index.html#projects">������Ŀ</a></li>                <li><a href="../portfolio/list.html">��Ʒ��</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
+            <button class="mobile-menu-btn" aria-label="�˵�"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
@@ -27,114 +27,114 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
-                    返回文章列表
+                    ���������б�
                 </a>
 
                 <header class="detail-header">
                     <span class="detail-tag">PowerBI</span>
-                    <h1>DAX别裁新解：诠释新视角</h1>
+                    <h1>DAX����½⣺ڹ�����ӽ�</h1>
                     <div class="detail-meta">
-                        <span>📅 2025年11月15日</span>
-                        <span style="margin-left: 16px;">⏱️ 阅读时间：20分钟</span>
+                        <span>?? 2025��11��15��</span>
+                        <span style="margin-left: 16px;">?? �Ķ�ʱ�䣺20����</span>
                     </div>
                 </header>
 
                 <div class="detail-content">
-                    <h2>一、入门：分析概念</h2>
-                    <h3>1. 分析本质和度量值</h3>
+                    <h2>һ�����ţ���������</h2>
+                    <h3>1. �������ʺͶ���ֵ</h3>
                     <ul>
-                        <li>分析的本质是抽象</li>
-                        <li>抽象的实现形式为聚合（由明细到问题）</li>
-                        <li>聚合的结果为度量（业务称为指标）</li>
+                        <li>�����ı����ǳ���</li>
+                        <li>�����ʵ����ʽΪ�ۺϣ�����ϸ�����⣩</li>
+                        <li>�ۺϵĽ��Ϊ������ҵ���Ϊָ�꣩</li>
                     </ul>
-                    <p>比如SQL的GROUP BY、Excel的透视、DAX的Context</p>
+                    <p>����SQL��GROUP BY��Excel��͸�ӡ�DAX��Context</p>
 
-                    <h3>2. 数据准备与辅助列（计算列）</h3>
-                    <p>分析之前的准备（问题缺少的要素），计算列一般非聚合（可以是行级别的预先聚合），通常是行级别，是预先的计算。</p>
+                    <h3>2. ����׼���븨���У������У�</h3>
+                    <p>����֮ǰ��׼��������ȱ�ٵ�Ҫ�أ���������һ��Ǿۺϣ��������м����Ԥ�Ⱦۺϣ���ͨ�����м�����Ԥ�ȵļ��㡣</p>
 
-                    <h3>3. 百变筛选及筛选器</h3>
-                    <p>筛选是判断T/F，返回一个中间表，和计算的阶段无关。</p>
+                    <h3>3. �ٱ�ɸѡ��ɸѡ��</h3>
+                    <p>ɸѡ���ж�T/F������һ���м�����ͼ���Ľ׶��޹ء�</p>
 
-                    <h3>4. 问题构成和计算上下文（Context）</h3>
-                    <p>影响聚合的要素称为上下文/环境/Context，用表的逻辑理解，嵌套性原则。</p>
+                    <h3>4. ���⹹�ɺͼ��������ģ�Context��</h3>
+                    <p>Ӱ��ۺϵ�Ҫ�س�Ϊ������/����/Context���ñ����߼����⣬Ƕ����ԭ��</p>
 
-                    <h3>5. 典型数据查询</h3>
+                    <h3>5. �������ݲ�ѯ</h3>
                     <ul>
-                        <li><strong>Project</strong> - 列查询</li>
-                        <li><strong>Filter</strong> - row by row筛选</li>
-                        <li><strong>Summarize</strong> - 分组聚合</li>
+                        <li><strong>Project</strong> - �в�ѯ</li>
+                        <li><strong>Filter</strong> - row by rowɸѡ</li>
+                        <li><strong>Summarize</strong> - ����ۺ�</li>
                     </ul>
 
-                    <h2>二、进阶篇：Expression</h2>
-                    <h3>1. Excel和DAX的日期函数</h3>
-                    <p>行级别函数/表达式，数据准备性质，如YEAR/DATEDIFF</p>
+                    <h2>��������ƪ��Expression</h2>
+                    <h3>1. Excel��DAX�����ں���</h3>
+                    <p>�м�����/����ʽ������׼�����ʣ���YEAR/DATEDIFF</p>
 
-                    <h3>2. 明细级别SUM+IF/SUMIF到SUMX</h3>
-                    <p>新建列：SUM+IF是行级别计算，SUMIF = SUMX + FILTER</p>
+                    <h3>2. ��ϸ����SUM+IF/SUMIF��SUMX</h3>
+                    <p>�½��У�SUM+IF���м�����㣬SUMIF = SUMX + FILTER</p>
 
-                    <h3>3. 问题阶段SUM+IF/SUMIF到SUMX</h3>
-                    <p>透视表：IF+SUM，IF优先筛选器，SUM+IF不可行，用SUMX效率更高。</p>
+                    <h3>3. ����׶�SUM+IF/SUMIF��SUMX</h3>
+                    <p>͸�ӱ���IF+SUM��IF����ɸѡ����SUM+IF�����У���SUMXЧ�ʸ��ߡ�</p>
 
-                    <h3>4. 为度量增加前置筛选：从SUMX到CALCULATE</h3>
+                    <h3>4. Ϊ��������ǰ��ɸѡ����SUMX��CALCULATE</h3>
                     <div class="highlight-box blue">
                         <strong>CALCULATE vs SUMX</strong>
                         <ul style="margin-top: 8px;">
-                            <li>CALCULATE改变筛选上下文，可嵌套</li>
-                            <li>SUMX向下兼容，适用于行级别/问题级别</li>
-                            <li>CALCULATE向上兼容，仅适用于问题级别</li>
+                            <li>CALCULATE�ı�ɸѡ�����ģ���Ƕ��</li>
+                            <li>SUMX���¼��ݣ��������м���/���⼶��</li>
+                            <li>CALCULATE���ϼ��ݣ������������⼶��</li>
                         </ul>
                     </div>
 
-                    <h3>5. SUMMARIZE表达式</h3>
+                    <h3>5. SUMMARIZE����ʽ</h3>
                     <ul>
-                        <li><code>SUMMARIZE</code>：table, groupbycolumn, name, expression</li>
-                        <li><code>SUMMARIZECOLUMNS</code>：groupbycolumn, filtertable, name, expression</li>
+                        <li><code>SUMMARIZE</code>��table, groupbycolumn, name, expression</li>
+                        <li><code>SUMMARIZECOLUMNS</code>��groupbycolumn, filtertable, name, expression</li>
                     </ul>
 
-                    <h2>三、高级篇：表操作</h2>
-                    <h3>1. 一切皆是表操作</h3>
-                    <p>表可以视为关系的实例，SQL/DAX都是表操作语言。</p>
+                    <h2>�����߼�ƪ��������</h2>
+                    <h3>1. һ�н��Ǳ�����</h3>
+                    <p>��������Ϊ��ϵ��ʵ����SQL/DAX���Ǳ��������ԡ�</p>
 
-                    <h3>2. 表操作的三种类型</h3>
+                    <h3>2. ����������������</h3>
                     <ul>
-                        <li><strong>筛选（WHERE）</strong> - 表的行子集</li>
-                        <li><strong>投影（SELECT column）</strong> - 表的列子集</li>
-                        <li><strong>扩展（JOIN/UNION）</strong> - 创建新行/列</li>
+                        <li><strong>ɸѡ��WHERE��</strong> - �������Ӽ�</li>
+                        <li><strong>ͶӰ��SELECT column��</strong> - �������Ӽ�</li>
+                        <li><strong>��չ��JOIN/UNION��</strong> - ��������/��</li>
                     </ul>
 
-                    <h3>3. 上下文转换</h3>
+                    <h3>3. ������ת��</h3>
                     <ul>
-                        <li>使用CALCULATE将行上下文转换为筛选上下文</li>
-                        <li>使用SUMMARIZECOLUMN增加measure</li>
+                        <li>ʹ��CALCULATE����������ת��Ϊɸѡ������</li>
+                        <li>ʹ��SUMMARIZECOLUMN����measure</li>
                     </ul>
 
-                    <h3>4. 重新理解上下文转换</h3>
+                    <h3>4. ��������������ת��</h3>
                     <ul>
-                        <li>SUMMARIZE是增加度量值，自带筛选上下文——从明细表到问题的汇总</li>
-                        <li>ADDCOLUMNS是增加计算列，需要使用CALCULATE转换筛选上下文——从明细表到明细表的扩展</li>
+                        <li>SUMMARIZE�����Ӷ���ֵ���Դ�ɸѡ�����ġ�������ϸ��������Ļ���</li>
+                        <li>ADDCOLUMNS�����Ӽ����У���Ҫʹ��CALCULATEת��ɸѡ�����ġ�������ϸ������ϸ������չ</li>
                     </ul>
 
-                    <h2>四、高级案例分析</h2>
-                    <h3>1. Customer Order Frequency 客户频次分析</h3>
-                    <p>二次聚合问题：</p>
+                    <h2>�ġ��߼���������</h2>
+                    <h3>1. Customer Order Frequency �ͻ�Ƶ�η���</h3>
+                    <p>���ξۺ����⣺</p>
                     <ul>
-                        <li>Tableau使用FIXED预先聚合</li>
-                        <li>SQL使用子查询/中间表</li>
-                        <li>DAX方法一：使用SUMMARIZECOLUMNS创建中间表</li>
-                        <li>DAX方法二：使用计算列预先聚合</li>
+                        <li>Tableauʹ��FIXEDԤ�Ⱦۺ�</li>
+                        <li>SQLʹ���Ӳ�ѯ/�м��</li>
+                        <li>DAX����һ��ʹ��SUMMARIZECOLUMNS�����м��</li>
+                        <li>DAX��������ʹ�ü�����Ԥ�Ⱦۺ�</li>
                     </ul>
 
-                    <h3>2. Cohort Analysis 阵列分析</h3>
-                    <p>用户分群与留存分析的经典场景</p>
+                    <h3>2. Cohort Analysis ���з���</h3>
+                    <p>�û���Ⱥ����������ľ��䳡��</p>
 
-                    <h3>3. Daily Profit KPI 每日利润判断</h3>
-                    <p>结合时间维度的动态指标计算</p>
+                    <h3>3. Daily Profit KPI ÿ�������ж�</h3>
+                    <p>���ʱ��ά�ȵĶ�ָ̬�����</p>
 
-                    <h3>4. Percent of Total 合计与优先级</h3>
-                    <p>理解ALL、ALLEXCEPT、ALLSELECTED的区别与应用场景</p>
+                    <h3>4. Percent of Total �ϼ������ȼ�</h3>
+                    <p>����ALL��ALLEXCEPT��ALLSELECTED��������Ӧ�ó���</p>
 
-                    <h2>五、总结</h2>
-                    <p>DAX的核心在于理解上下文的概念，掌握表操作的思维方式。从SUMX到CALCULATE，从行上下文到筛选上下文，每一步都需要深入理解其背后的逻辑。</p>
+                    <h2>�塢�ܽ�</h2>
+                    <p>DAX�ĺ����������������ĵĸ�����ձ�������˼ά��ʽ����SUMX��CALCULATE�����������ĵ�ɸѡ�����ģ�ÿһ������Ҫ���������䱳����߼���</p>
                 </div>
             </div>
         </article>
