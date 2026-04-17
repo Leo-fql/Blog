@@ -273,11 +273,11 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
-    background: var(--bg-secondary);
+    padding: 6px 12px;
+    background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-primary);
     transition: var(--transition);
 }
@@ -293,7 +293,7 @@ img {
 }
 
 .skill-tag .skill-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-light);
     font-weight: normal;
 }
